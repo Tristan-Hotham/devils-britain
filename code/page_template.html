@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Where the Devil Lives</title>
+<meta name="description" content="Where does the Devil live in Britain? {{n_devil|int}} Devil, Deil and Gaelic devil names on the Ordnance Survey's gazetteer, {{n_landmarks|int}} named Devil monuments, and {{n_saint|int}} saint-named features, each measured against fifty matched places.">
+<meta property="og:title" content="Where the Devil Lives: Devil place names in Britain">
+<meta property="og:description" content="{{n_devil|int}} Devil names, tested against matched places. The Devil gets the old stones and earthworks; the saints get the churches and holy wells.">
+<meta property="og:image" content="https://tristan-hotham.github.io/devils-britain/header.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+/* Pale ash and bone, soot black, ember red. Blue-grey = the saints. */
+:root{
+  --bg:#F1ECE4; --panel:#E7E0D5; --fg:#1D1915; --muted:#665D54; --rule:#D6CCBE; --card:#FAF7F2; --border:#BFB3A3;
+  --hot:#B42B17; --ember:#D8641E; --gold:#9A6A10; --soot:#3B332C; --saint:#3F6C8E; --moss:#55702F; --blue:#2D5E8A; --band:#B7AC9E; --ink:#2A241F; --sea:#E6E1DA;
+  --c-household:#B42B17; --c-hollow:#5C2A1A; --c-wood:#55702F; --c-hill:#7B6F64; --c-body:#D8641E; --c-earthwork:#9A6A10; --c-water:#2D5E8A; --c-other:#A89E92;
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#16120F; --panel:#211B17; --fg:#F0E9E0; --muted:#B0A496; --rule:#352C25; --card:#1C1713; --border:#4A3F35;
+  --hot:#F0674B; --ember:#F2994A; --gold:#E0B04A; --soot:#D9CFC2; --saint:#86B4D8; --moss:#9BC46E; --blue:#7FAEDC; --band:#5B5047; --ink:#F0E9E0; --sea:#120F0C;
+  --c-household:#F0674B; --c-hollow:#C98B6B; --c-wood:#9BC46E; --c-hill:#B8ADA1; --c-body:#F2994A; --c-earthwork:#E0B04A; --c-water:#7FAEDC; --c-other:#8C8278; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#16120F; --panel:#211B17; --fg:#F0E9E0; --muted:#B0A496; --rule:#352C25; --card:#1C1713; --border:#4A3F35;
+  --hot:#F0674B; --ember:#F2994A; --gold:#E0B04A; --soot:#D9CFC2; --saint:#86B4D8; --moss:#9BC46E; --blue:#7FAEDC; --band:#5B5047; --ink:#F0E9E0; --sea:#120F0C;
+  --c-household:#F0674B; --c-hollow:#C98B6B; --c-wood:#9BC46E; --c-hill:#B8ADA1; --c-body:#F2994A; --c-earthwork:#E0B04A; --c-water:#7FAEDC; --c-other:#8C8278; color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 18px/1.62 var(--body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));overflow-x:hidden}
+.wrap{max-width:680px;margin:0 auto;padding-block:28px 64px}
+.wrap .bleed{width:min(1080px,calc(100vw - 32px));margin-left:calc((100% - min(1080px,100vw - 32px))/2);margin-right:0}
+a{color:inherit;text-decoration-color:var(--hot);text-underline-offset:3px}
+.kicker{font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.kicker b{background:var(--hot);color:#fff;padding:5px 8px;font-weight:500}
+header.hero{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px 24px;align-items:end;border-bottom:6px double var(--fg);padding-bottom:22px;margin-top:18px}
+h1{font:900 clamp(52px,13vw,112px)/.86 var(--display);letter-spacing:-.02em;margin:0;text-wrap:balance;font-variation-settings:"SOFT" 50}
+h1 em{font-style:normal;color:var(--hot);display:block}
+.mark{width:clamp(80px,18vw,150px);height:auto;display:block;color:var(--fg)}
+.dek{grid-column:1/-1;font-size:21px;line-height:1.42;margin:8px 0 0;max-width:46ch}
+.byline{font:400 13px/1.4 var(--mono);color:var(--muted);margin-top:14px}
+h2{font:800 34px/1.04 var(--display);letter-spacing:-.01em;margin:52px 0 10px;text-wrap:balance}
+h2 .n{font:500 13px/1 var(--mono);color:var(--hot);display:block;letter-spacing:.1em;margin-bottom:10px}
+h3{font:600 20px/1.25 var(--display);margin:28px 0 6px}
+p{margin:0 0 16px}
+.lede::first-letter{font:900 76px/.8 var(--display);float:left;margin:6px 10px 0 0;color:var(--hot);border:2px solid var(--soot);padding:6px 6px 2px;background:var(--card)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:26px 0 8px}
+.stats div{background:var(--card);padding:14px 12px}
+.stats b{display:block;font:900 clamp(28px,6vw,40px)/1 var(--display);color:var(--fg)}
+.stats b.h{color:var(--hot)}.stats b.s{color:var(--saint)}
+.stats span{font:400 12px/1.35 var(--mono);color:var(--muted);display:block;margin-top:6px}
+@media (max-width:600px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.figure{margin:26px 0 30px}
+.fig-h{font:600 19px/1.25 var(--display);margin:0 0 4px}
+.fig-sub{font:400 13px/1.45 var(--mono);color:var(--muted);margin:0 0 12px}
+.src{font:400 12px/1.45 var(--mono);color:var(--muted);margin-top:10px}
+.chart{width:100%;position:relative}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+svg text{font-family:var(--mono);fill:var(--fg)}
+.lab{font-size:12px}.lab.m{fill:var(--muted)}.lab.b{font-weight:500}.lab.s{font-size:11px}.lab.h{fill:var(--hot);font-weight:500}
+.tip{position:absolute;pointer-events:none;background:var(--fg);color:var(--bg);font:400 12px/1.45 var(--mono);padding:8px 10px;border-radius:3px;max-width:280px;z-index:1000;transform:translate(-50%,calc(-100% - 12px));display:none}
+.tip b{font-weight:500}
+.controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 10px}
+.btn{font:500 12px/1 var(--mono);background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:3px;padding:8px 10px;cursor:pointer;min-height:36px}
+.btn[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.btn:focus-visible{outline:2px solid var(--hot);outline-offset:2px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+.chip{font:500 12px/1 var(--mono);background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:20px;padding:7px 10px 7px 8px;cursor:pointer;min-height:34px;display:inline-flex;align-items:center;gap:6px}
+.chip i{width:11px;height:11px;border-radius:50%;display:inline-block;flex:none}
+.chip i.sq{border-radius:1px;transform:rotate(45deg)}
+.chip[aria-pressed="false"]{opacity:.42}
+.chip[aria-pressed="false"] i{background:transparent!important;border:1.5px solid var(--muted)}
+.chip small{color:var(--muted);font-weight:400}
+.mapgrid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:18px;align-items:start}
+@media (max-width:820px){.mapgrid{grid-template-columns:1fr}}
+#map{height:clamp(440px,76vh,680px);border:1px solid var(--border);background:var(--sea);border-radius:2px;z-index:0}
+.side{display:flex;flex-direction:column;gap:12px}
+.card{background:var(--card);border:1px solid var(--border);border-left:4px solid var(--hot);padding:12px 14px;font:400 13px/1.5 var(--mono)}
+.card b{font:600 18px/1.2 var(--display);display:block;margin-bottom:6px}
+.toplist{list-style:none;margin:0;padding:0;font:400 12.5px/1.3 var(--mono);max-height:430px;overflow:auto;border:1px solid var(--rule);background:var(--card)}
+.toplist li{display:grid;grid-template-columns:12px minmax(0,1fr) auto;gap:8px;padding:7px 10px;border-bottom:1px solid var(--rule);cursor:pointer;align-items:center}
+.toplist li:hover,.toplist li:focus-visible{background:var(--panel);outline:none}
+.toplist i{width:10px;height:10px;display:block;transform:rotate(45deg)}
+.toplist .v{color:var(--muted);font-size:11px;text-align:right}
+.toplist .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.toplist .nm small{display:block;color:var(--muted);font-size:11px;overflow:hidden;text-overflow:ellipsis}
+.pull{font:600 26px/1.25 var(--display);border-left:6px solid var(--hot);padding:4px 0 4px 18px;margin:30px 0}
+.note{background:var(--panel);border:1px solid var(--rule);padding:14px 16px;font-size:16px;margin:22px 0}
+.note h3{margin-top:0}
+.words{display:flex;flex-wrap:wrap;gap:6px 8px;margin:10px 0 0}
+.words span{font:400 13px/1.2 var(--body);font-style:italic;background:var(--card);border:1px solid var(--rule);padding:5px 8px;border-radius:2px}
+table.t{width:100%;border-collapse:collapse;font:400 13px/1.35 var(--mono)}
+table.t th{text-align:left;font-weight:500;color:var(--muted);border-bottom:2px solid var(--fg);padding:6px 8px 6px 0}
+table.t td{border-bottom:1px solid var(--rule);padding:7px 8px 7px 0;vertical-align:top}
+table.t td.num,table.t th.num{text-align:right;white-space:nowrap}
+.tablewrap{overflow-x:auto}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+.cta a{font:500 13px/1 var(--mono);text-decoration:none;border:1px solid var(--fg);padding:11px 14px;border-radius:3px}
+.cta a.p{background:var(--hot);border-color:var(--hot);color:#fff}
+footer{border-top:6px double var(--fg);margin-top:56px;padding-top:16px;font:400 13px/1.55 var(--mono);color:var(--muted)}
+footer p{margin:0 0 10px}
+.theme{position:fixed;right:12px;bottom:12px;z-index:1001}
+.leaflet-container{font:400 12px/1.4 var(--mono);background:var(--sea)}
+.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:var(--card);color:var(--fg);border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+.leaflet-popup-content{margin:10px 12px;font:400 12.5px/1.45 var(--mono)}
+.leaflet-popup-content b{font:600 15px/1.2 var(--display);display:block;margin-bottom:4px}
+.leaflet-popup-content q{font-family:var(--body);font-style:italic;display:block;margin:4px 0}
+.leaflet-container a.leaflet-popup-close-button{color:var(--muted)}
+.leaflet-control-attribution{background:color-mix(in srgb,var(--card) 85%,transparent)!important;color:var(--muted)!important;font-size:10px}
+.leaflet-control-attribution a{color:var(--fg)!important}
+.leaflet-popup-content a{color:var(--hot)}
+.leaflet-bar a{background:var(--card);color:var(--fg);border-bottom-color:var(--border)}
+.leaflet-bar a:hover{background:var(--panel)}
+.leaflet-bar{border:1px solid var(--border)!important}
+@media print{.theme,.controls,.chips{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="kicker"><b>Data study</b><span>Folklore × landscape</span><span>Great Britain</span></div>
+<header class="hero">
+  <h1>Where the <em>Devil</em> lives</h1>
+  <svg class="mark" viewBox="0 0 120 120" aria-hidden="true"><path d="M30 50c-8-14-4-30 6-38-2 12 2 22 10 28M90 50c8-14 4-30-6-38 2 12-2 22-10 28" fill="none" stroke="var(--hot)" stroke-width="6" stroke-linecap="round"/><path d="M20 108l18-50h44l18 50z" fill="var(--soot)"/><path d="M48 76h24M54 90h12" stroke="var(--card)" stroke-width="4" stroke-linecap="round"/><path d="M60 58c-6-10 0-18 0-26 6 8 10 16 0 26z" fill="var(--ember)"/><path d="M6 112h108" stroke="currentColor" stroke-width="3"/></svg>
+  <p class="dek">Devil's Dyke, Devil's Punch Bowl, Devil's Arrows, Devil's Bridge, Devil's Kitchen: Britain's map is full of the Devil's property. I found {{n_devil|int}} Devil names on the Ordnance Survey's open gazetteer and rivers, and {{n_landmarks|int}} named Devil monuments in national records, and asked what he owns, where, and whether the saints own something different.</p>
+</header>
+<div class="byline">Dr Tristan Hotham, Independent researcher · October 2026 · Data: OS Open Names, OS Open Rivers, OpenStreetMap, Wikidata, Atlas of Hillforts, Wikipedia</div>
+
+<div class="stats">
+  <div><b>{{n_devil|int}}</b><span>Devil, Deil and Gaelic devil names on the OS gazetteer and rivers of Great Britain</span></div>
+  <div><b class="h">{{groups.devil.prehist_1.match.obs|pct0}}</b><span>lie within 1 km of a recorded prehistoric monument; matched places: {{groups.devil.prehist_1.match.base|pct0}}</span></div>
+  <div><b class="s">{{groups.saint_own.church_1.match.obs|pct0}}</b><span>of saint-named features lie within 1 km of a church; matched places: {{groups.saint_own.church_1.match.base|pct0}}</span></div>
+  <div><b>{{word_class.household.n|int}}</b><span>Devil names make him a householder: kitchen, chair, oven, frying pan, punch bowl</span></div>
+</div>
+
+<p class="lede">The Devil is the busiest landowner in British folklore. He dug Devil's Dyke above Brighton to let the sea drown the Christians of the Weald, threw the Devil's Arrows at Aldborough, leapt across the Devil's Jumps and left the Devil's Punch Bowl behind him. In the classic Devil's Bridge tale he builds a bridge in return for the first soul to cross it. And he owns a remarkable amount of furniture: a chair, a kitchen, a dining room, a dressing room, a frying pan, a pair of bellows.</p>
+<p>It is often said that the Devil gets the strange old things in the landscape: the prehistoric stones and earthworks nobody could explain, and the steep, wild, unsettling ground, while the saints get the holy wells and the churches. That is a testable claim. So I asked the map: <b>where does the Devil live in Britain, and does he really get the old stones while the saints get the springs?</b></p>
+<p>I collected every feature on the Ordnance Survey's open gazetteer (OS Open Names) and its open river network (OS Open Rivers) with Devil, the Scots Deil or a Gaelic word for the devil in its name: {{n_devil|int}} in all. I compared each with fifty ordinary features of the same kind in the same 50 km square, and did the same for {{n_saint|int}} natural features named after a saint, such as St Peter's Stone or St Catherine's Hill.</p>
+<p>The short answer: yes, roughly. Devil names sit near recorded prehistoric monuments much more often than matched places do, and the saints' names do not. The saints instead sit by churches and holy wells, which the Devil's names do not. The Devil's ground is a little steeper than the places it is compared with, but no wilder; and he shows no liking for county boundaries. The names, though, are mostly not old. Where a date can be found, the Devil arrives in the record in the seventeenth and eighteenth centuries, thousands of years after the stones went up.</p>
+
+<h2><span class="n">01 · The map</span>Every Devil I could find</h2>
+<p>Small marks are the gazetteer names, coloured by what the Devil owns. Large diamonds are named Devil monuments in national records: barrows, stones, a stone circle, a hillfort, bridges. Open rings in Ireland come from OpenStreetMap. Saint-named features, prehistoric monuments and holy wells can be switched on. Tap any mark for its details and distances.</p>
+<div class="figure bleed">
+  <div class="chips" id="chips" role="group" aria-label="Show or hide each kind of Devil name"></div>
+  <div class="controls">
+    <button class="btn" id="bsa" aria-pressed="false">Saint-named features</button>
+    <button class="btn" id="bpre" aria-pressed="false">Prehistoric monuments</button>
+    <button class="btn" id="bwell" aria-pressed="false">Holy wells</button>
+  </div>
+  <div class="mapgrid">
+    <div>
+      <div id="map" role="region" aria-label="Map of Devil place names and Devil monuments in Great Britain and Ireland"></div>
+      <div class="src">Names: OS Open Names and OS Open Rivers; Ireland: OpenStreetMap. Monuments: OpenStreetMap and Wikidata (via The Megalith Highway, Same Shape, Different Millennia and Is the Barrow a European Thing?), Atlas of Hillforts, Wikidata, Wikipedia. Holy wells: OpenStreetMap and Wikidata. Tiles © Esri.</div>
+    </div>
+    <div class="side">
+      <div class="card"><b>The Devil's famous addresses</b>Named Devil monuments and landmarks in national records. Tap one to find it.</div>
+      <ul class="toplist" id="toplist"></ul>
+    </div>
+  </div>
+</div>
+<p>The gazetteer Devils are spread across Britain: {{devil_by_country.England|int}} in England, {{devil_by_country.Scotland|int}} in Scotland and {{devil_by_country.Wales|words}} in Wales. In Scotland {{devil_by_form.Scots Deil|int}} are the Scots <i>Deil</i> (Deil's Caldron, Deil's Kettle, The Deil's Heid) and {{devil_by_form.Gaelic|words}} are Gaelic: Bod an Deamhain, which the OS also names The Devil's Point, and Druim an Diabhail. Relative to the number of named features, the Devil is commonest in the East of England ({{rate_by_region.Eastern.per100k|f0}} per 100,000 features) and the South East ({{rate_by_region.South East.per100k|f0}}), and rarest in Yorkshire and the Humber ({{rate_by_region.Yorkshire and the Humber.n|words}}) and the North East (none).</p>
+
+<h2><span class="n">02 · His property</span>What the Devil owns</h2>
+<p>Read the second half of each name and a pattern appears. The commonest single thing is a <b>den</b> ({{heads_top.Den|int}} of them), then woods and copses. But the largest group of names is domestic. {{word_class.household.n|int}} of the {{n_devil|int}} names ({{word_class.household.share|pct0}}) give the Devil a household or a trade: a kitchen, a chair, a dining room, a dressing room, a study, a frying pan, a kettle, a caldron, an oven, a pair of bellows, a mill, a limekiln, a barn, a peat stack, a threshing floor, a bowling green and a punch bowl.</p>
+<div class="figure">
+  <div class="fig-h">What the Devil owns</div>
+  <div class="fig-sub">Devil names by the word that follows Devil, Deil or the Gaelic form, grouped by the image the name uses. Hover for the words.</div>
+  <div class="chart" id="c_class"></div>
+</div>
+<p>The household names are natural features, not buildings. {{wc_household_coastal|Words}} of the {{word_class.household.n|int}} are coastal rocks, coves and beaches (the Devil's Kitchen, Frying Pan and Bellows in Devon, Cornwall and Dorset; the Devil's Dining Room and Peatstack in Aberdeenshire); most of the rest are waterfalls, pools and hollows inland (Deil's Caldron, Devil's Punch Bowl at Devil's Bridge). They are on steep ground: their median slope is {{groups.wc_household.slope_med.match.obs|f1}} degrees, against {{groups.wc_household.slope_med.match.base|f1}} for the matched places. The Devil's body turns up too, mostly as bends and drops: {{word_class.body.n|int}} names give him an elbow, teeth, a head, a mouth, footsteps or a slide.</p>
+<div class="figure">
+  <div class="fig-h">What kind of place gets a Devil name, and a saint's</div>
+  <div class="fig-sub">Share of Devil names and of saint-named features in each kind of OS feature, against all {{types_n.all|int}} named OS features that are not settlements.</div>
+  <div class="chart" id="c_types"></div>
+</div>
+<p>Compared with everything else on the gazetteer, valleys and hollows make up {{types.Valleys and hollows.devil_ratio|f1}} times as large a share of Devil names as of all named features, and coastal features {{types.Coast.devil_ratio|f1}} times; hills only {{types.Hills.devil_ratio|f1}} times. Saints are common on the coast too ({{types.Coast.saint_ratio|f1}} times), where islands, bays and headlands are named for them, but scarce in valleys and hollows ({{types.Valleys and hollows.saint_ratio|f1}} times). The Devil lives in the hole; the saint stands on the island.</p>
+
+<h2><span class="n">03 · The old stones</span>The Devil gets the prehistoric monuments</h2>
+<p>Now the main test. For each Devil name I measured the distance to the nearest recorded prehistoric monument: {{layers.n_barrows|int}} barrows and burial cairns, {{layers.n_stones|int}} standing stones, stone circles and chambered tombs, and {{layers.n_hillforts|int}} hillforts. {{groups.devil.prehist_1.match.obs|pct0}} of the Devil names lie within 1 km of one. Of the matched places (woods with woods, coves with coves, from the same 50 km square), {{groups.devil.prehist_1.match.base|pct0}} do, and of random land {{groups.devil.prehist_1.rand.base|pct0}}. In 2,000 replicate draws of matched places, a gap this large turned up with chance {{groups.devil.prehist_1.match.p|p}}.</p>
+<div class="figure">
+  <div class="fig-h">The Devil, the saints and their neighbours</div>
+  <div class="fig-sub">Share of places within 1 km of a prehistoric monument, 1 km of a barrow, 2 km of a hillfort, 1 km of a church and 2 km of a holy well. Grey bars: matched places and random land, with the 95% range of 2,000 replicate draws.</div>
+  <div class="chart" id="c_comp"></div>
+</div>
+<p>The saints' names show nothing of the kind: {{groups.saint_own.prehist_1.match.obs|pct0}} lie within 1 km of a prehistoric monument, against {{groups.saint_own.prehist_1.match.base|pct0}} of their matched places. The Devil's excess comes from barrows ({{groups.devil.barrow_1.match.obs|pct0}} within 1 km, against {{groups.devil.barrow_1.match.base|pct0}}) and hillforts ({{groups.devil.hillfort_2.match.obs|pct0}} within 2 km, against {{groups.devil.hillfort_2.match.base|pct0}}) together; neither alone is beyond what luck can give with {{n_devil|int}} names.</p>
+<p class="pull">The Devil sits next to the barrows and the hillforts; the saints sit next to the church and the well.</p>
+<p>Some of the closest cases are telling. In Deils Wood in East Renfrewshire a cairn, recorded as "Deils Wood, cairn 350m E of Bonnyton", lies {{devil_prehist_close.0.km|m}} from the gazetteer point. Devil's Tor on Dartmoor is {{devil_prehist_close.2.km|m}} from Beardown Man, a standing stone. On the Aberdeenshire coast the Devil's Dining Room, the Deil's Kettle and the Devil's Peatstack all sit beside coastal forts in the Atlas of Hillforts (Cullykhan, Dunnicaer and Cleaved Head). And Devil's Dyke above Brighton is a valley right below a hillfort, {{ex.dyke_hill.hillfort_km|m}} away.</p>
+<div class="figure">
+  <div class="fig-h">North and south, coast and inland</div>
+  <div class="fig-sub">Share of Devil names within 1 km of a prehistoric monument, by group, against matched places. The Scots group includes the {{devil_by_form.Gaelic|words}} Gaelic names.</div>
+  <div class="chart" id="c_groups"></div>
+</div>
+<p>The pattern is strongest in the north and on the coast. {{groups.devil_north.prehist_1.match.obs|pct0}} of the {{groups.devil_north.n|int}} northern Devil names (North East, North West, Yorkshire and the Humber, Scotland) lie within 1 km of a monument, against {{groups.devil_north.prehist_1.match.base|pct0}} of matched places (chance {{groups.devil_north.prehist_1.match.p|p}}); for the Scots Deil names it is {{groups.devil_scots.prehist_1.match.obs|pct0}} against {{groups.devil_scots.prehist_1.match.base|pct0}}. Coastal Devils lean on promontory forts ({{groups.devil_coastal.prehist_1.match.obs|pct0}} against {{groups.devil_coastal.prehist_1.match.base|pct0}}). Inland the excess is smaller but still there ({{groups.devil_inland.prehist_1.match.obs|pct0}} against {{groups.devil_inland.prehist_1.match.base|pct0}}, chance {{groups.devil_inland.prehist_1.match.p|p}}), and in the south the barrows carry it: {{groups.devil_south.barrow_1.match.obs|pct0}} within 1 km of a barrow, against {{groups.devil_south.barrow_1.match.base|pct0}}.</p>
+
+<h2><span class="n">04 · The saints' half</span>Churches and holy wells</h2>
+<p>The saint-named features are the Devil's mirror image. Of the {{n_saint_own|int}} that do not simply borrow the name of a nearby St Something village, {{groups.saint_own.church_1.match.obs|pct0}} lie within 1 km of a church, against {{groups.saint_own.church_1.match.base|pct0}} of matched places (chance {{groups.saint_own.church_1.match.p|p}}), and {{groups.saint_own.well_2.match.obs|pct0}} within 2 km of a recorded holy well, against {{groups.saint_own.well_2.match.base|pct0}} (chance {{groups.saint_own.well_2.match.p|p}}). The Devil's names are no closer to churches than ordinary places ({{groups.devil.church_1.match.obs|pct0}} against {{groups.devil.church_1.match.base|pct0}}) and not significantly closer to holy wells ({{groups.devil.well_2.match.obs|pct0}} against {{groups.devil.well_2.match.base|pct0}}).</p>
+<p>So the old division holds up surprisingly well on the modern map. The Church's names cluster round the Church's places; the Devil's names cluster round the monuments that were already ancient when the first churches were built. At Devil's Dyke the two meet in a single story: the Devil dug his trench to drown the Christians of the Weald, and St Cuthman of Steyning beat him with a candle and a crowing cock.</p>
+
+<h2><span class="n">05 · Wild ground</span>Steep, but not wilder</h2>
+<p>Is the Devil's ground odd ground? I measured the slope at each place and the relief (the highest minus the lowest ground within 1 km) from a terrain model with cells of about 100 m. Devil names are on steeper ground than random land and a little steeper than matched places: median slope {{groups.devil.slope_med.match.obs|f1}} degrees, against {{groups.devil.slope_med.match.base|f1}} for matched places (chance {{groups.devil.slope_med.match.p|p}}) and {{groups.devil.slope_med.rand.base|f1}} for random land. But their relief is no greater than that of matched places ({{groups.devil.relief_med.match.obs|f0}} m against {{groups.devil.relief_med.match.base|f0}} m): most of the drama comes with the kind of feature, cliffs, coves and gorges, rather than from the Devil choosing the wildest examples.</p>
+<div class="figure">
+  <div class="fig-h">How steep is the Devil's ground?</div>
+  <div class="fig-sub">Median slope (degrees) at Devil names and saint names, against matched places and random land.</div>
+  <div class="chart" id="c_slope"></div>
+</div>
+<p>The most dramatic Devils are in Scotland: the Devil's Punchbowl (Coire na Ciche) on Arran has {{devil_steepest.0.relief|int}} m of relief within 1 km, and The Devil's Point in the Cairngorms {{devil_steepest.1.relief|int}} m. Saint names, by contrast, sit on gentler, lower ground than their matched places (median relief {{groups.saint_own.relief_med.match.obs|f0}} m against {{groups.saint_own.relief_med.match.base|f0}} m, chance {{groups.saint_own.relief_med.match.p|p}}).</p>
+
+<h3>Edges</h3>
+<p>Devils are sometimes said to haunt boundaries, the no-man's-land between parishes. I could not test parish boundaries, but I could test county ones (ceremonial counties in England, preserved counties in Wales, council areas in Scotland). There is nothing there: {{groups.devil.edge_2.match.obs|pct0}} of Devil names lie within 2 km of a county boundary, against {{groups.devil.edge_2.match.base|pct0}} of matched places (chance {{groups.devil.edge_2.match.p|p}}).</p>
+
+<h2><span class="n">06 · The famous Devils</span>Old monuments, new names</h2>
+<p>Most of the famous Devils are not in the gazetteer at all. OS Open Names leaves out antiquities, so the Devil's Arrows, the Devil's Den and the Devil's Quoits are missing from it. I found {{n_landmarks|int}} named Devil monuments and landmarks in other national open records: {{landmarks_by_kind.Barrow or cairn|words}} barrows or cairns, {{landmarks_by_kind.Chambered tomb|words}} chambered tombs, {{landmarks_by_kind.Standing stones|words}} sets of standing stones, a stone circle, a hillfort, a linear earthwork, {{landmarks_bridges|words}} bridges and two natural features with Wikipedia articles. {{landmarks_prehistoric|Words}} of the {{n_landmarks|int}} are prehistoric monuments. Only {{n_landmarks_in_osnames|words}} have a Devil name in the gazetteer within 1.5 km.</p>
+<div class="figure">
+  <div class="fig-h">When does the Devil arrive?</div>
+  <div class="fig-sub">What the English Wikipedia articles on the best-known Devil landmarks say about the name or the legend.</div>
+  <div class="tablewrap"><table class="t" id="tabdate"></table></div>
+</div>
+<p>This is the part to be careful about. A Devil name records a story, not a date. Where Wikipedia gives a date for the name, it is late: John Aubrey mentions the Devil's Arrows in 1687 (the stones are Stone Age), the English name Devil's Bridge is first recorded in 1734, and the Devil's Jumps first appear on John Rocque's map of 1765. The great Devil's Dyke near Newmarket was simply "the ditch" or the "great ditch" in medieval documents. For most of the smaller names I have no date at all, and they could be just as recent. What the map shows is where people, at some point, decided that only the Devil could have made this; not when.</p>
+
+<h3>Ireland</h3>
+<p>The Republic of Ireland has its own Devils. OpenStreetMap has {{ireland.n|int}} named Devil places there once shops, car parks and duplicates are set aside: the Devil's Bit Mountain in Tipperary, the Devil's Glen in Wicklow, the Devil's Punchbowl on Mangerton, the Devil's Ladder on Carrauntoohil, and Devilsmother. They are on the map but not in the tests, because OpenStreetMap names are not a like-for-like gazetteer with OS Open Names.</p>
+
+<h2><span class="n">07 · How I did this</span>Methods and caveats</h2>
+<h3>Names</h3>
+<p>I searched NAME1 and NAME2 of all {{n_os_features|int}} OS Open Names features (settlements, landforms, landcover and water) and the names of all named watercourses in OS Open Rivers for: Devil as a word, with or without a possessive or plural (so Kill Devil Copse counts, but Mandeville and Devilla Forest do not); Devils- fused to a following word (Devilsden, Devilsmouth, Devilspit, Devilsrest); the Scots Deil, Deil's or Deils as a word (not Welsh Deildre or Deilo); and the Gaelic Deamhain, Diabhail or Dhiabhail. This gives {{n_devil_os|int}} gazetteer features and {{n_devil_rivers|words}} watercourses. I set aside {{n_near_miss|int}} near misses (six Mandevilles, Devilla Forest, Demoniac Plantation, two Deildres and Gallt Deilo). I did not search for Hell, Satan, Old Nick or the like, whose meaning is less certain. Each name's head word, the word after Devil, is sorted into a class by the image it uses; the classes are about form, not origin.</p>
+<p>Saint names are OS Open Names features that are not settlements and have St, St. or Saint followed by a capitalised word in their name ({{n_saint|int}} features). {{n_saint_parish|int}} of them share their saint with a settlement within 5 km (St Agnes Wood near St Agnes, for example) and are likely to borrow a parish name, so the main comparison uses the other {{n_saint_own|int}}.</p>
+<h3>Controls and measures</h3>
+<p>For every Devil and saint name I drew {{k_controls|int}} ordinary OS names of the same local type from the same 50 km square (100 km or the whole country when fewer than 20 were available), leaving out all Devil and saint names, and {{k_controls|int}} random points of land in the same square. Watercourses were matched with other named watercourses. Each test compares the real names with 2,000 replicate sets, each taking one control at random per name; chance values are two-sided. Distances are straight lines to: {{layers.n_barrows|int}} barrows, burial cairns and mounds (OpenStreetMap and Wikidata, from <a href="https://tristan-hotham.github.io/barrows-of-europe/">Is the Barrow a European Thing?</a>); {{layers.n_stones|int}} megaliths and stone circles (OpenStreetMap and Wikidata, from <a href="https://tristan-hotham.github.io/megalith-highway/">The Megalith Highway</a> and <a href="https://tristan-hotham.github.io/stone-circles/">Same Shape, Different Millennia</a>); {{layers.n_hillforts|int}} hillforts (Atlas of Hillforts of Britain and Ireland, as used in <a href="https://tristan-hotham.github.io/within-sight/">Within Sight</a>); {{layers.n_churches|int}} church buildings in Wikidata (from <a href="https://tristan-hotham.github.io/saints-and-wells/">Whose Church Is It?</a>); and {{layers.n_wells|int}} holy wells in Great Britain (from <a href="https://tristan-hotham.github.io/holy-wells/">From Saint to Wish</a> and Whose Church Is It?). Slope and relief come from the AWS Terrain Tiles elevation model at zoom 10. County boundaries are the ONS 2025 boundaries, as built for <a href="https://tristan-hotham.github.io/how-roman-is-your-road/">How Roman Is Your Road?</a></p>
+<h3>Caveats</h3>
+<p>The names are few: {{n_devil|int}} in all, and only a dozen or two in each class, so the class results are suggestive at best. Names record stories, not dates; many Devil names may be recent, and a name beside a barrow may have been given by someone who knew it was a barrow. OS Open Names leaves out antiquities and many small features, so the famous monument Devils are counted separately and not tested. The monument records are much fuller in some areas than others (holy wells especially are thin in Britain, at {{layers.n_wells|int}}), and many barrows are lost. Coastal promontory forts drive much of the coastal result. Modern county boundaries are not parish or ancient boundaries. I ran {{n_measures|int}} measures on many groups, so single chance values near 0.05 should be read with caution; the two results I would put weight on are the Devil's excess near prehistoric monuments and the saints' excess near churches and holy wells.</p>
+<div class="figure">
+  <div class="fig-h">The main tests</div>
+  <div class="fig-sub">Observed value, and the matched and random control values with chance values in brackets.</div>
+  <div class="tablewrap"><table class="t" id="tab"></table></div>
+</div>
+
+<div class="cta">
+  <a class="p" href="https://doi.org/10.5281/zenodo.23691878">Read the paper</a>
+  <a href="https://github.com/Tristan-Hotham/devils-britain">Data and code</a>
+  <a href="https://blog.tristanhotham.com/2026/10/27/devils-britain/">Read the blog post</a>
+  <a href="https://blog.tristanhotham.com/">More on the blog</a>
+</div>
+
+<footer>
+  <p>Dr Tristan Hotham, researcher on social media, campaigns and politics. Independent researcher. ORCID <a href="https://orcid.org/0000-0003-4931-9349">0000-0003-4931-9349</a>.</p>
+  <p>Cite as: Hotham, T. (2026) <i>Where the Devil Lives: Devil place names, prehistoric monuments and saints in Britain</i>. Data study. <a href="https://doi.org/10.5281/zenodo.23691878">https://doi.org/10.5281/zenodo.23691878</a></p>
+  <p>Place names and rivers: Contains OS data © Crown copyright and database right 2026, <a href="https://www.ordnancesurvey.co.uk/products/os-open-names">OS Open Names</a> and <a href="https://www.ordnancesurvey.co.uk/products/os-open-rivers">OS Open Rivers</a>, Open Government Licence v3.0. County boundaries: Office for National Statistics, OGL v3.0. Barrows, megaliths, stone circles, holy wells and Irish names: © OpenStreetMap contributors, ODbL, and <a href="https://www.wikidata.org/">Wikidata</a>, CC0. Churches and bridges: Wikidata, CC0. Hillforts: Lock, G. and Ralston, I. (2017) <a href="https://hillforts.arch.ox.ac.uk">Atlas of Hillforts of Britain and Ireland</a>, CC BY-SA 4.0. Landmark notes: English Wikipedia, CC BY-SA 4.0. Terrain: AWS Terrain Tiles (Mapzen/Tilezen; sources include SRTM and EU-DEM). Base map tiles © Esri. Map library: Leaflet.</p>
+  <p>Text and derived data are released under CC BY-SA 4.0 (distances to OpenStreetMap features derive from data under the ODbL). Code is MIT.</p>
+  <p>I wrote the text, with drafting and editing assistance from Claude (Anthropic), which also helped prepare the analysis code. I reviewed and checked all text and results.</p>
+  <p><a href="https://blog.tristanhotham.com/">More history data posts on the blog</a> · <a href="https://tristan-hotham.github.io/here-be-dragons/">Here Be Dragons</a> · <a href="https://tristan-hotham.github.io/saints-and-wells/">Whose Church Is It?</a> · <a href="https://tristan-hotham.github.io/holy-wells/">From Saint to Wish</a> · <a href="https://tristan-hotham.github.io/megalith-highway/">The Megalith Highway</a> · <a href="https://github.com/Tristan-Hotham/devils-britain">Data and code on GitHub</a></p>
+</footer>
+</div>
+<div class="tip" id="tip"></div>
+<button class="btn theme" id="theme" aria-label="Toggle dark mode">◐</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+/*DATA*/
+const NS = "http://www.w3.org/2000/svg";
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const el = (t, a = {}, p) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; };
+const pc = (x, d = 0) => (x * 100).toFixed(d) + "%";
+const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const tip = document.getElementById("tip");
+function showTip(h, x, y) { tip.innerHTML = h; tip.style.display = "block"; const w = tip.offsetWidth; x = Math.max(w / 2 + 8, Math.min(innerWidth - w / 2 - 8, x)); tip.style.left = x + scrollX + "px"; tip.style.top = y + scrollY + "px"; }
+function hideTip() { tip.style.display = "none"; }
+function hover(node, h) { node.style.cursor = "pointer"; node.setAttribute("tabindex", "0"); const s = () => { const r = node.getBoundingClientRect(); showTip(h, r.left + r.width / 2, r.top); }; node.addEventListener("pointerenter", s); node.addEventListener("focus", s); node.addEventListener("pointerleave", hideTip); node.addEventListener("blur", hideTip); node.addEventListener("click", e => { e.stopPropagation(); s(); }); }
+document.addEventListener("click", hideTip);
+const redraws = [];
+function resp(box, render) { let last = 0; const go = (force) => { const w = Math.max(240, Math.round(box.clientWidth)); if (!force && Math.abs(w - last) < 4) return; last = w; box.innerHTML = ""; render(w, w < 560); }; new ResizeObserver(() => go()).observe(box); redraws.push(() => go(true)); go(); }
+const lbl = (svg, x, y, s, cls = "lab", anchor = "start") => { const t = el("text", { x, y, class: cls, "text-anchor": anchor }, svg); t.textContent = s; return t; };
+const isDark = () => { const r = document.documentElement; return r.dataset.theme ? r.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches; };
+document.getElementById("theme").onclick = () => { const r = document.documentElement; r.dataset.theme = isDark() ? "light" : "dark"; redraws.forEach(f => f()); window.__restyle && window.__restyle(); };
+const pfmt = p => p == null ? "" : (p < 0.001 ? "<0.001" : p.toFixed(3));
+const km = v => v == null ? "n/a" : (v < 1 ? Math.round(v * 1000) + " m" : v.toFixed(1) + " km");
+
+/* == map == */
+const CLS = { household: "Household and work", hollow: "Dens, holes and pools", wood: "Woods and copses", hill: "Hills, rocks and points", body: "Body and movement", earthwork: "Dykes, banks and bridges", water: "Streams and waters", other: "Other" };
+const on = { lm: true, ie: true }; Object.keys(CLS).forEach(k => on[k] = true);
+const map = L.map("map", { zoomSnap: 0.25, scrollWheelZoom: false, preferCanvas: true }).setView([54.3, -4.2], 5.4);
+let tiles;
+function setTiles() { if (tiles) map.removeLayer(tiles); const v = isDark() ? "World_Dark_Gray_Base" : "World_Light_Gray_Base"; tiles = L.tileLayer(`https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/${v}/MapServer/tile/{z}/{y}/{x}`, { maxZoom: 16, attribution: "Tiles © Esri" }).addTo(map); }
+setTiles();
+const layers = {}; const lmMarkers = [];
+function dvPop(r) {
+  const [la, lo, nm, c, lt, cty, head, pk, ck, wk, rel, src, form] = r;
+  return `<b>${esc(nm)}</b>${esc(lt)}, ${esc(cty)}<br>The Devil owns: ${esc(head)} (${esc(CLS[c])})<br>${esc(src)} · ${esc(form)}<br>Prehistoric monument ${km(pk)} · church ${km(ck)} · holy well ${km(wk)}<br>Relief within 1 km: ${rel} m`;
+}
+function lmPop(r) {
+  const [la, lo, nm, k, kl, near, cty, src, note, url] = r;
+  return `<b>${esc(nm)}</b>${esc(kl)}, near ${esc(near)}, ${esc(cty)}${note ? "<q>" + esc(note) + "</q>" : ""}${url ? `<a href="${esc(url)}">Wikipedia</a><br>` : ""}<span style="color:var(--muted)">Record: ${esc(src)}</span>`;
+}
+const diamond = (lat, lon, col, size) => L.marker([lat, lon], { icon: L.divIcon({ className: "", iconSize: [size, size], iconAnchor: [size / 2, size / 2], html: `<div style="width:${size}px;height:${size}px;background:${col};transform:rotate(45deg);border:2px solid ${css("--card")};box-shadow:0 0 0 1px ${css("--soot")}"></div>` }) });
+function build() {
+  Object.values(layers).forEach(l => map.removeLayer(l)); lmMarkers.length = 0;
+  for (const k in CLS) {
+    const g = L.layerGroup(); const col = css("--c-" + k);
+    D.dv.filter(r => r[3] === k).forEach(r => L.circleMarker([r[0], r[1]], { radius: 5, color: css("--card"), weight: 1, fillColor: col, fillOpacity: .95 }).bindPopup(dvPop(r), { maxWidth: 300 }).addTo(g));
+    layers[k] = g;
+  }
+  const g = L.layerGroup();
+  D.lm.forEach(r => { const m = diamond(r[0], r[1], ["barrow", "stone", "circle", "tomb", "hillfort"].includes(r[3]) ? css("--hot") : css("--soot"), 13).bindPopup(lmPop(r), { maxWidth: 300 }); m.addTo(g); lmMarkers.push([r, m]); });
+  layers.lm = g;
+  const gi = L.layerGroup();
+  D.ie.forEach(r => L.circleMarker([r[0], r[1]], { radius: 6, color: css("--hot"), weight: 2, fill: false }).bindPopup(`<b>${esc(r[2])}</b>${r[3] ? esc(r[3]) + "<br>" : ""}Republic of Ireland · <a href="${esc(r[4])}">OpenStreetMap</a>`).addTo(gi));
+  layers.ie = gi;
+  for (const k in layers) if (on[k]) layers[k].addTo(map);
+}
+let lsa, lpre, lwell;
+function overlays() {
+  [lsa, lpre, lwell].forEach(l => l && map.removeLayer(l));
+  lsa = L.layerGroup(); D.sa.forEach(r => L.circleMarker([r[0], r[1]], { radius: 3.6, color: css("--saint"), weight: 1.4, fillColor: css("--card"), fillOpacity: r[5] ? .2 : .9 }).bindPopup(`<b>${esc(r[2])}</b>${esc(r[3])}, ${esc(r[4])}${r[5] ? "<br>Shares its saint with a settlement within 5 km" : ""}<br>Church ${km(r[7])} · holy well ${km(r[8])} · prehistoric monument ${km(r[6])}`).addTo(lsa));
+  lpre = L.layerGroup(); [[D.barrows, "--moss"], [D.stones, "--gold"], [D.hillforts, "--soot"]].forEach(([arr, c]) => arr.forEach(r => L.circleMarker([r[0], r[1]], { radius: 1.6, stroke: false, fillColor: css(c), fillOpacity: .55, interactive: false }).addTo(lpre)));
+  lwell = L.layerGroup(); D.wells.forEach(r => L.circleMarker([r[0], r[1]], { radius: 2.6, color: css("--blue"), weight: 1.2, fill: false, interactive: false }).addTo(lwell));
+  [["bsa", lsa], ["bpre", lpre], ["bwell", lwell]].forEach(([id, l]) => { if (document.getElementById(id).getAttribute("aria-pressed") === "true") l.addTo(map); });
+  ["lm", "ie", ...Object.keys(CLS)].forEach(k => { if (on[k] && layers[k]) { map.removeLayer(layers[k]); layers[k].addTo(map); } });
+}
+build(); overlays();
+map.fitBounds(L.latLngBounds([...D.dv, ...D.ie, ...D.lm].map(r => [r[0], r[1]])), { padding: [10, 10] });
+const chips = document.getElementById("chips");
+const counts = {}; D.dv.forEach(r => counts[r[3]] = (counts[r[3]] || 0) + 1);
+[["lm", "Devil monuments", "--hot", D.lm.length, 1], ...Object.keys(CLS).map(k => [k, CLS[k], "--c-" + k, counts[k] || 0, 0]), ["ie", "Ireland (OpenStreetMap)", "--hot", D.ie.length, 2]].forEach(([k, l, c, n, sq]) => {
+  const b = document.createElement("button"); b.className = "chip"; b.setAttribute("aria-pressed", on[k]);
+  b.innerHTML = `<i class="${sq === 1 ? "sq" : ""}" style="${sq === 2 ? "background:transparent;border:2px solid var(--hot)" : "background:var(" + c + ")"}"></i>${l} <small>${n}</small>`;
+  b.onclick = () => { on[k] = !on[k]; b.setAttribute("aria-pressed", on[k]); on[k] ? layers[k].addTo(map) : map.removeLayer(layers[k]); };
+  chips.appendChild(b);
+});
+["bsa", "bpre", "bwell"].forEach(id => { const b = document.getElementById(id); b.onclick = () => { b.setAttribute("aria-pressed", b.getAttribute("aria-pressed") !== "true"); overlays(); }; });
+window.__restyle = () => { setTiles(); build(); overlays(); };
+const tl = document.getElementById("toplist");
+D.lm.slice().sort((a, b) => a[2].localeCompare(b[2])).forEach(r => {
+  const li = document.createElement("li"); li.tabIndex = 0;
+  const pre = ["barrow", "stone", "circle", "tomb", "hillfort"].includes(r[3]);
+  li.innerHTML = `<i style="background:${pre ? "var(--hot)" : "var(--soot)"}"></i><span class="nm">${esc(r[2])}<small>${esc(r[5])}, ${esc(r[6])}</small></span><span class="v">${esc(r[4])}</span>`;
+  const go = () => { map.setView([r[0], r[1]], 12); const m = lmMarkers.find(x => x[0] === r); if (m) m[1].openPopup(); document.getElementById("map").scrollIntoView({ behavior: "smooth", block: "center" }); };
+  li.onclick = go; li.onkeydown = e => { if (e.key === "Enter") go(); };
+  tl.appendChild(li);
+});
+
+/* == charts == */
+function bars(id, rows, opt) {
+  resp(document.getElementById(id), (W, sm) => {
+    const rh = 25, gap = opt.gap || 12; let H = 10; rows.forEach(g => H += g.items.length * rh + gap + 20);
+    const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": opt.aria }, document.getElementById(id));
+    const L0 = sm ? 118 : 160, R0 = 64, mx = opt.max;
+    const x = v => L0 + v / mx * (W - L0 - R0);
+    let yy = 6;
+    rows.forEach(g => {
+      lbl(svg, 0, yy + 13, g.title, "lab b"); yy += 20;
+      g.items.forEach(it => {
+        const c = it.obs ? css(it.col || "--hot") : css("--band");
+        lbl(svg, L0 - 8, yy + rh / 2 + 4, it.label, "lab s" + (it.obs ? "" : " m"), "end");
+        const r = el("rect", { x: L0, y: yy + 4, width: Math.max(1, x(it.v) - L0), height: rh - 8, fill: c }, svg);
+        if (it.lo != null) { el("line", { x1: x(it.lo), x2: x(it.hi), y1: yy + rh / 2, y2: yy + rh / 2, stroke: css("--fg"), "stroke-width": 1.4 }, svg); [it.lo, it.hi].forEach(v => el("line", { x1: x(v), x2: x(v), y1: yy + rh / 2 - 5, y2: yy + rh / 2 + 5, stroke: css("--fg"), "stroke-width": 1.4 }, svg)); }
+        lbl(svg, x(Math.max(it.v, it.hi || 0)) + 6, yy + rh / 2 + 4, opt.f(it.v), "lab s" + (it.obs ? " b" : ""));
+        hover(r, `<b>${esc(it.label)}</b><br>${opt.f(it.v)}${it.n != null ? ` (n = ${it.n})` : ""}${it.lo != null ? `<br>95% range ${opt.f(it.lo)} to ${opt.f(it.hi)}` : ""}${it.p != null ? `<br>chance ${pfmt(it.p)}` : ""}`);
+        yy += rh;
+      });
+      yy += gap;
+    });
+  });
+}
+const G = D.G;
+const tri = (g, k, lab, col, rand = true) => { const x = G[g][k]; const a = [{ label: lab, v: x.match.obs, obs: true, col, n: x.match.n }, { label: "matched places", v: x.match.base, lo: x.match.base_lo, hi: x.match.base_hi, p: x.match.p }]; if (rand) a.push({ label: "random land", v: x.rand.base, lo: x.rand.base_lo, hi: x.rand.base_hi, p: x.rand.p }); return a; };
+const MT = [["prehist_1", "Prehistoric monument within 1 km"], ["barrow_1", "Barrow within 1 km"], ["hillfort_2", "Hillfort within 2 km"], ["church_1", "Church within 1 km"], ["well_2", "Holy well within 2 km"]];
+bars("c_comp", MT.map(([k, t]) => ({ title: t, items: [...tri("devil", k, "Devil names", "--hot", false), ...tri("saint_own", k, "Saint names", "--saint", false)] })), { max: .65, f: v => pc(v, 0), aria: "Devil and saint names near prehistoric monuments, churches and holy wells" });
+bars("c_groups", [["devil_north", "North (incl. Scotland)"], ["devil_south", "South and Midlands"], ["devil_scots", "Scots Deil and Gaelic"], ["devil_coastal", "Coastal"], ["devil_inland", "Inland"]].map(([g, t]) => ({ title: `${t} (n = ${G[g].n})`, items: tri(g, "prehist_1", "Devil names", "--hot", false) })), { max: .6, f: v => pc(v, 0), aria: "Devil names near prehistoric monuments by group", gap: 8 });
+bars("c_slope", [{ title: "Devil names", items: tri("devil", "slope_med", "Devil names", "--hot") }, { title: "Household and work names", items: tri("wc_household", "slope_med", "Household names", "--c-household") }, { title: "Saint names", items: tri("saint_own", "slope_med", "Saint names", "--saint") }], { max: 6.5, f: v => v.toFixed(1) + "°", aria: "Median slope at Devil and saint names" });
+
+// what the Devil owns
+resp(document.getElementById("c_class"), (W, sm) => {
+  const order = Object.keys(CLS).filter(k => D.WC[k].n).sort((a, b) => D.WC[b].n - D.WC[a].n);
+  const rh = sm ? 46 : 34, H = order.length * rh + 6, L0 = sm ? 162 : 190, R0 = 40;
+  const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "Devil names by what the Devil owns" }, document.getElementById("c_class"));
+  const mx = Math.max(...order.map(k => D.WC[k].n)), x = v => v / mx * (W - L0 - R0);
+  order.forEach((k, i) => {
+    const y = 4 + i * rh, v = D.WC[k];
+    lbl(svg, L0 - 8, y + 15, sm ? CLS[k].replace("Dykes, banks and bridges", "Dykes and bridges").replace("Hills, rocks and points", "Hills and rocks").replace("Dens, holes and pools", "Dens and holes") : CLS[k], "lab s", "end");
+    const r = el("rect", { x: L0, y: y + 4, width: x(v.n), height: 16, fill: css("--c-" + k) }, svg);
+    lbl(svg, L0 + x(v.n) + 6, y + 16, String(v.n), "lab s b");
+    const words = Object.keys(v.heads).join(", ");
+    const mc = Math.floor((W - L0) / 6.8); const t = lbl(svg, L0, y + 34, words.length > mc ? words.slice(0, mc - 1) + "…" : words, "lab s m");
+    hover(r, `<b>${esc(CLS[k])}</b><br>${v.n} names (${pc(v.share)})<br>${esc(Object.entries(v.heads).map(([a, b]) => b > 1 ? a + " ×" + b : a).join(", "))}`);
+  });
+});
+
+// type mix
+resp(document.getElementById("c_types"), (W, sm) => {
+  const order = Object.keys(D.TY);
+  const rh = 54, H = order.length * rh + 30, L0 = sm ? 120 : 170, R0 = 50;
+  const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "Share of Devil and saint names by kind of feature" }, document.getElementById("c_types"));
+  const mx = Math.max(...order.flatMap(k => [D.TY[k].devil_share, D.TY[k].saint_share, D.TY[k].all_share])) * 1.05, x = v => v / mx * (W - L0 - R0);
+  order.forEach((k, i) => {
+    const y = 4 + i * rh, v = D.TY[k];
+    lbl(svg, L0 - 8, y + 26, k.replace("Wetland and other land", sm ? "Wetland, other" : "Wetland and other land"), "lab s", "end");
+    [["devil_share", "--hot", "Devil", "devil"], ["saint_share", "--saint", "Saint", "saint"], ["all_share", "--band", "All OS features", "all"]].forEach(([f, c, nm, n], j) => {
+      const r = el("rect", { x: L0, y: y + 4 + j * 15, width: Math.max(1, x(v[f])), height: 12, fill: css(c) }, svg);
+      lbl(svg, L0 + x(v[f]) + 5, y + 14 + j * 15, pc(v[f]), "lab s" + (j < 2 ? " b" : " m"));
+      hover(r, `<b>${esc(k)}</b><br>${nm}: ${v[n].toLocaleString()} (${pc(v[f], 1)})`);
+    });
+  });
+  let lx = L0; [["--hot", "Devil"], ["--saint", "Saint"], ["--band", "All OS features"]].forEach(([c, t]) => { el("rect", { x: lx, y: H - 16, width: 10, height: 10, fill: css(c) }, svg); lbl(svg, lx + 14, H - 7, t, "lab s m"); lx += t.length * 7.5 + 30; });
+});
+
+/* == tables == */
+document.getElementById("tabdate").innerHTML = `<thead><tr><th>Landmark</th><th>First record of the name</th><th>What the article says</th></tr></thead><tbody>` +
+  D.DATED.map(r => `<tr><td><a href="${esc(r.url)}">${esc(r.label)}</a></td><td>${esc(r.first || "not given")}</td><td>${esc(r.note)}</td></tr>`).join("") + "</tbody>";
+const TAB = [["devil", "prehist_1", "Devil: prehistoric monument within 1 km"], ["devil", "barrow_1", "Devil: barrow within 1 km"], ["devil", "stone_2", "Devil: megalith within 2 km"], ["devil", "hillfort_2", "Devil: hillfort within 2 km"], ["devil", "church_1", "Devil: church within 1 km"], ["devil", "well_2", "Devil: holy well within 2 km"], ["devil", "slope_med", "Devil: median slope (degrees)", "f"], ["devil", "relief_med", "Devil: median relief (m)", "m"], ["devil", "edge_2", "Devil: county boundary within 2 km"],
+  ["devil_north", "prehist_1", "Northern Devil: prehistoric within 1 km"], ["devil_south", "barrow_1", "Southern Devil: barrow within 1 km"], ["devil_inland", "prehist_1", "Inland Devil: prehistoric within 1 km"],
+  ["saint_own", "prehist_1", "Saint: prehistoric monument within 1 km"], ["saint_own", "church_1", "Saint: church within 1 km"], ["saint_own", "well_2", "Saint: holy well within 2 km"], ["saint_own", "slope_med", "Saint: median slope (degrees)", "f"], ["saint_own", "relief_med", "Saint: median relief (m)", "m"]];
+const ff = (v, t) => v == null ? "n/a" : t === "f" ? v.toFixed(1) : t === "m" ? v.toFixed(0) : pc(v, 0);
+document.getElementById("tab").innerHTML = `<thead><tr><th>Measure</th><th class="num">n</th><th class="num">Observed</th><th class="num">Matched</th><th class="num">Random land</th></tr></thead><tbody>` +
+  TAB.map(([g, k, l, t]) => { const x = G[g][k]; return `<tr><td>${l}</td><td class="num">${G[g].n}</td><td class="num">${ff(x.match.obs, t)}</td><td class="num">${ff(x.match.base, t)} (${pfmt(x.match.p)})</td><td class="num">${ff(x.rand.base, t)} (${pfmt(x.rand.p)})</td></tr>`; }).join("") + "</tbody>";
+</script>
+</body>
+</html>
