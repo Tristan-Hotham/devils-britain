@@ -1,0 +1,541 @@
+group,measure,label,control,obs,base,base_lo,base_hi,p,n,ratio
+devil,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",match,0.3084,0.1880,0.1215,0.2523,0.0000,107,1.6402
+devil,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",rand,0.3084,0.1338,0.0748,0.1963,0.0000,107,2.3045
+devil,prehist_med,Median distance to a prehistoric monument (km),match,2.5058,2.6796,2.2228,3.3373,0.5730,107,0.9352
+devil,prehist_med,Median distance to a prehistoric monument (km),rand,2.5058,3.0489,2.4840,3.6250,0.0670,107,0.8219
+devil,barrow_1,Share within 1 km of a barrow or burial cairn,match,0.1308,0.0849,0.0374,0.1402,0.1110,107,1.5419
+devil,barrow_1,Share within 1 km of a barrow or burial cairn,rand,0.1308,0.0738,0.0280,0.1215,0.0390,107,1.7722
+devil,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",match,0.0561,0.0409,0.0093,0.0748,0.5470,107,1.3699
+devil,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",rand,0.0561,0.0499,0.0187,0.0935,0.9050,107,1.1236
+devil,hillfort_2,Share within 2 km of a hillfort,match,0.2804,0.2170,0.1495,0.2804,0.0690,107,1.2920
+devil,hillfort_2,Share within 2 km of a hillfort,rand,0.2804,0.1607,0.1028,0.2243,0.0010,107,1.7442
+devil,church_1,Share within 1 km of a church,match,0.3364,0.3054,0.2243,0.3832,0.5020,107,1.1016
+devil,church_1,Share within 1 km of a church,rand,0.3364,0.3067,0.2243,0.3925,0.5410,107,1.0969
+devil,church_med,Median distance to a church (km),match,1.2996,1.4373,1.2537,1.6485,0.1630,107,0.9042
+devil,church_med,Median distance to a church (km),rand,1.2996,1.4086,1.2188,1.6302,0.2970,107,0.9227
+devil,well_2,Share within 2 km of a holy well,match,0.0561,0.0344,0.0093,0.0654,0.3030,107,1.6304
+devil,well_2,Share within 2 km of a holy well,rand,0.0561,0.0217,0.0000,0.0561,0.0530,107,2.5862
+devil,water_025,Share within 250 m of a named watercourse,match,0.2804,0.2486,0.1963,0.3084,0.3600,107,1.1278
+devil,water_025,Share within 250 m of a named watercourse,rand,0.2804,0.1680,0.1028,0.2336,0.0030,107,1.6685
+devil,relief_med,Median relief within 1 km (m),match,64.6703,67.8030,58.5037,79.6247,0.5430,107,0.9538
+devil,relief_med,Median relief within 1 km (m),rand,64.6703,51.7673,44.4647,60.4696,0.0050,107,1.2493
+devil,slope_med,Median slope (degrees),match,2.8793,2.2277,1.8157,2.7653,0.0220,107,1.2925
+devil,slope_med,Median slope (degrees),rand,2.8793,1.7936,1.4527,2.1728,0.0000,107,1.6053
+devil,steep,Share on ground steeper than 10 degrees,match,0.0935,0.0764,0.0374,0.1215,0.5560,107,1.2225
+devil,steep,Share on ground steeper than 10 degrees,rand,0.0935,0.0363,0.0093,0.0654,0.0030,107,2.5773
+devil,elev_med,Median elevation (m),match,63.3263,52.4142,42.3472,67.0278,0.1200,107,1.2082
+devil,elev_med,Median elevation (m),rand,63.3263,81.3044,67.6286,96.1904,0.0120,107,0.7789
+devil,edge_2,Share within 2 km of a county boundary,match,0.1121,0.1314,0.0748,0.1963,0.6070,107,0.8535
+devil,edge_2,Share within 2 km of a county boundary,rand,0.1121,0.1413,0.0841,0.2056,0.4350,107,0.7937
+devil,edge_med,Median distance to a county boundary (km),match,11.1123,11.4908,9.1695,13.8814,0.7780,107,0.9671
+devil,edge_med,Median distance to a county boundary (km),rand,11.1123,10.3720,7.9680,12.6398,0.5300,107,1.0714
+devil_inland,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",match,0.2436,0.1477,0.0769,0.2179,0.0260,78,1.6493
+devil_inland,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",rand,0.2436,0.1133,0.0513,0.1795,0.0010,78,2.1493
+devil_inland,prehist_med,Median distance to a prehistoric monument (km),match,2.8321,3.2248,2.5216,4.0381,0.2730,78,0.8783
+devil_inland,prehist_med,Median distance to a prehistoric monument (km),rand,2.8321,3.4828,2.7463,4.3585,0.0780,78,0.8132
+devil_inland,barrow_1,Share within 1 km of a barrow or burial cairn,match,0.1538,0.0895,0.0385,0.1538,0.0600,78,1.7192
+devil_inland,barrow_1,Share within 1 km of a barrow or burial cairn,rand,0.1538,0.0656,0.0256,0.1154,0.0060,78,2.3438
+devil_inland,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",match,0.0769,0.0464,0.0128,0.0897,0.2450,78,1.6575
+devil_inland,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",rand,0.0769,0.0433,0.0000,0.0897,0.2270,78,1.7751
+devil_inland,hillfort_2,Share within 2 km of a hillfort,match,0.1923,0.1477,0.0769,0.2179,0.2920,78,1.3021
+devil_inland,hillfort_2,Share within 2 km of a hillfort,rand,0.1923,0.1246,0.0641,0.1923,0.0830,78,1.5432
+devil_inland,church_1,Share within 1 km of a church,match,0.3333,0.3021,0.2051,0.3974,0.6190,78,1.1036
+devil_inland,church_1,Share within 1 km of a church,rand,0.3333,0.3162,0.2179,0.4103,0.8160,78,1.0543
+devil_inland,church_med,Median distance to a church (km),match,1.2524,1.4298,1.2256,1.6742,0.0890,78,0.8760
+devil_inland,church_med,Median distance to a church (km),rand,1.2524,1.3894,1.1615,1.6424,0.2720,78,0.9014
+devil_inland,well_2,Share within 2 km of a holy well,match,0.0256,0.0264,0.0000,0.0641,1.0000,78,0.9709
+devil_inland,well_2,Share within 2 km of a holy well,rand,0.0256,0.0185,0.0000,0.0513,0.8150,78,1.3889
+devil_inland,water_025,Share within 250 m of a named watercourse,match,0.3205,0.3036,0.2308,0.3718,0.7580,78,1.0557
+devil_inland,water_025,Share within 250 m of a named watercourse,rand,0.3205,0.1700,0.0897,0.2564,0.0010,78,1.8854
+devil_inland,relief_med,Median relief within 1 km (m),match,59.5865,63.8210,52.3730,76.1121,0.4890,78,0.9337
+devil_inland,relief_med,Median relief within 1 km (m),rand,59.5865,47.8371,39.5491,58.1355,0.0200,78,1.2456
+devil_inland,slope_med,Median slope (degrees),match,2.2587,1.9680,1.5140,2.4696,0.2260,78,1.1477
+devil_inland,slope_med,Median slope (degrees),rand,2.2587,1.6570,1.2601,2.0958,0.0130,78,1.3631
+devil_inland,steep,Share on ground steeper than 10 degrees,match,0.0641,0.0628,0.0256,0.1026,1.0000,78,1.0204
+devil_inland,steep,Share on ground steeper than 10 degrees,rand,0.0641,0.0441,0.0000,0.0897,0.4800,78,1.4535
+devil_inland,elev_med,Median elevation (m),match,94.0113,87.2737,71.4341,104.3432,0.4390,78,1.0772
+devil_inland,elev_med,Median elevation (m),rand,94.0113,81.3439,65.4724,100.8919,0.1700,78,1.1557
+devil_inland,edge_2,Share within 2 km of a county boundary,match,0.1282,0.1695,0.0897,0.2564,0.3810,78,0.7564
+devil_inland,edge_2,Share within 2 km of a county boundary,rand,0.1282,0.1633,0.0897,0.2436,0.4540,78,0.7849
+devil_inland,edge_med,Median distance to a county boundary (km),match,9.5968,8.6570,6.5076,11.1631,0.4620,78,1.1086
+devil_inland,edge_med,Median distance to a county boundary (km),rand,9.5968,8.4865,6.4409,11.1931,0.4210,78,1.1308
+devil_coastal,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",match,0.4828,0.2966,0.1724,0.4483,0.0320,29,1.6279
+devil_coastal,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",rand,0.4828,0.1890,0.0690,0.3448,0.0000,29,2.5547
+devil_coastal,prehist_med,Median distance to a prehistoric monument (km),match,1.0035,1.7259,1.1767,2.5935,0.0160,29,0.5814
+devil_coastal,prehist_med,Median distance to a prehistoric monument (km),rand,1.0035,2.2025,1.5317,3.0514,0.0000,29,0.4556
+devil_coastal,barrow_1,Share within 1 km of a barrow or burial cairn,match,0.0690,0.0724,0.0000,0.1724,1.0000,29,0.9524
+devil_coastal,barrow_1,Share within 1 km of a barrow or burial cairn,rand,0.0690,0.0959,0.0000,0.2069,0.8900,29,0.7194
+devil_coastal,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",match,0.0000,0.0262,0.0000,0.1034,0.8910,29,0.0000
+devil_coastal,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",rand,0.0000,0.0676,0.0000,0.1724,0.2190,29,0.0000
+devil_coastal,hillfort_2,Share within 2 km of a hillfort,match,0.5172,0.4034,0.2414,0.5517,0.1990,29,1.2821
+devil_coastal,hillfort_2,Share within 2 km of a hillfort,rand,0.5172,0.2579,0.1379,0.3793,0.0000,29,2.0053
+devil_coastal,church_1,Share within 1 km of a church,match,0.3448,0.3145,0.1724,0.4828,0.8470,29,1.0965
+devil_coastal,church_1,Share within 1 km of a church,rand,0.3448,0.2814,0.1379,0.4483,0.5640,29,1.2255
+devil_coastal,church_med,Median distance to a church (km),match,1.3768,1.4770,1.0569,1.9933,0.6640,29,0.9322
+devil_coastal,church_med,Median distance to a church (km),rand,1.3768,1.4629,1.1150,1.9685,0.7180,29,0.9411
+devil_coastal,well_2,Share within 2 km of a holy well,match,0.1379,0.0559,0.0000,0.1379,0.1290,29,2.4691
+devil_coastal,well_2,Share within 2 km of a holy well,rand,0.1379,0.0303,0.0000,0.1034,0.0140,29,4.5455
+devil_coastal,water_025,Share within 250 m of a named watercourse,match,0.1724,0.1007,0.0345,0.2069,0.2380,29,1.7123
+devil_coastal,water_025,Share within 250 m of a named watercourse,rand,0.1724,0.1628,0.0345,0.3103,1.0000,29,1.0593
+devil_coastal,relief_med,Median relief within 1 km (m),match,70.7369,77.5613,59.1744,100.8820,0.5050,29,0.9120
+devil_coastal,relief_med,Median relief within 1 km (m),rand,70.7369,60.7290,47.8512,75.9693,0.1520,29,1.1648
+devil_coastal,slope_med,Median slope (degrees),match,6.0506,3.2532,2.1087,5.1240,0.0030,29,1.8599
+devil_coastal,slope_med,Median slope (degrees),rand,6.0506,2.1290,1.5431,2.8963,0.0000,29,2.8420
+devil_coastal,steep,Share on ground steeper than 10 degrees,match,0.1724,0.1131,0.0000,0.2414,0.4320,29,1.5244
+devil_coastal,steep,Share on ground steeper than 10 degrees,rand,0.1724,0.0152,0.0000,0.0690,0.0000,29,11.3636
+devil_coastal,elev_med,Median elevation (m),match,19.4074,13.0273,8.2632,19.0303,0.0370,29,1.4898
+devil_coastal,elev_med,Median elevation (m),rand,19.4074,81.2771,56.8862,109.5179,0.0000,29,0.2388
+devil_coastal,edge_2,Share within 2 km of a county boundary,match,0.0690,0.0290,0.0000,0.1034,0.4010,29,2.3810
+devil_coastal,edge_2,Share within 2 km of a county boundary,rand,0.0690,0.0821,0.0000,0.1724,1.0000,29,0.8403
+devil_coastal,edge_med,Median distance to a county boundary (km),match,20.0139,22.4723,16.1558,27.7031,0.5270,29,0.8906
+devil_coastal,edge_med,Median distance to a county boundary (km),rand,20.0139,16.3547,11.4631,22.9842,0.2550,29,1.2237
+devil_english,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",match,0.2809,0.1906,0.1236,0.2697,0.0240,89,1.4741
+devil_english,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",rand,0.2809,0.1317,0.0674,0.2022,0.0000,89,2.1331
+devil_english,prehist_med,Median distance to a prehistoric monument (km),match,2.7052,2.7524,2.2437,3.5071,0.8920,89,0.9828
+devil_english,prehist_med,Median distance to a prehistoric monument (km),rand,2.7052,3.1560,2.5469,3.8190,0.1730,89,0.8572
+devil_english,barrow_1,Share within 1 km of a barrow or burial cairn,match,0.1461,0.0962,0.0449,0.1573,0.1310,89,1.5187
+devil_english,barrow_1,Share within 1 km of a barrow or burial cairn,rand,0.1461,0.0804,0.0337,0.1348,0.0370,89,1.8156
+devil_english,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",match,0.0225,0.0364,0.0000,0.0787,0.6800,89,0.6173
+devil_english,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",rand,0.0225,0.0422,0.0112,0.0787,0.5060,89,0.5319
+devil_english,hillfort_2,Share within 2 km of a hillfort,match,0.2360,0.1964,0.1348,0.2697,0.3300,89,1.2014
+devil_english,hillfort_2,Share within 2 km of a hillfort,rand,0.2360,0.1465,0.0899,0.2135,0.0120,89,1.6104
+devil_english,church_1,Share within 1 km of a church,match,0.3371,0.3211,0.2360,0.4157,0.8180,89,1.0497
+devil_english,church_1,Share within 1 km of a church,rand,0.3371,0.3297,0.2360,0.4270,0.9730,89,1.0225
+devil_english,church_med,Median distance to a church (km),match,1.2987,1.3742,1.1814,1.6001,0.4810,89,0.9451
+devil_english,church_med,Median distance to a church (km),rand,1.2987,1.3325,1.1474,1.5380,0.8080,89,0.9747
+devil_english,well_2,Share within 2 km of a holy well,match,0.0562,0.0366,0.0000,0.0787,0.4290,89,1.5337
+devil_english,well_2,Share within 2 km of a holy well,rand,0.0562,0.0231,0.0000,0.0562,0.0970,89,2.4272
+devil_english,water_025,Share within 250 m of a named watercourse,match,0.2809,0.2371,0.1798,0.3034,0.2480,89,1.1848
+devil_english,water_025,Share within 250 m of a named watercourse,rand,0.2809,0.1535,0.0787,0.2247,0.0030,89,1.8302
+devil_english,relief_med,Median relief within 1 km (m),match,60.7729,62.8120,53.3284,73.1720,0.7130,89,0.9675
+devil_english,relief_med,Median relief within 1 km (m),rand,60.7729,48.2408,41.6562,57.0128,0.0060,89,1.2598
+devil_english,slope_med,Median slope (degrees),match,2.6583,2.1007,1.6407,2.6421,0.0490,89,1.2655
+devil_english,slope_med,Median slope (degrees),rand,2.6583,1.6903,1.3134,2.0688,0.0000,89,1.5727
+devil_english,steep,Share on ground steeper than 10 degrees,match,0.0899,0.0715,0.0337,0.1124,0.5540,89,1.2579
+devil_english,steep,Share on ground steeper than 10 degrees,rand,0.0899,0.0225,0.0000,0.0562,0.0000,89,4.0000
+devil_english,elev_med,Median elevation (m),match,59.6584,50.7685,41.0355,65.9749,0.1790,89,1.1751
+devil_english,elev_med,Median elevation (m),rand,59.6584,75.7630,62.1191,90.1460,0.0200,89,0.7874
+devil_english,edge_2,Share within 2 km of a county boundary,match,0.1124,0.1290,0.0674,0.2022,0.7580,89,0.8711
+devil_english,edge_2,Share within 2 km of a county boundary,rand,0.1124,0.1328,0.0674,0.2022,0.6680,89,0.8460
+devil_english,edge_med,Median distance to a county boundary (km),match,11.1496,11.6351,9.0446,14.4577,0.7360,89,0.9583
+devil_english,edge_med,Median distance to a county boundary (km),rand,11.1496,10.8356,8.0695,13.6150,0.8530,89,1.0290
+devil_scots,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",match,0.4444,0.1756,0.0542,0.3889,0.0110,18,2.5316
+devil_scots,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",rand,0.4444,0.1444,0.0000,0.3333,0.0010,18,3.0769
+devil_scots,prehist_med,Median distance to a prehistoric monument (km),match,1.0297,2.3440,1.5051,3.9382,0.0000,18,0.4393
+devil_scots,prehist_med,Median distance to a prehistoric monument (km),rand,1.0297,2.5791,1.7050,3.7541,0.0000,18,0.3993
+devil_scots,barrow_1,Share within 1 km of a barrow or burial cairn,match,0.0556,0.0289,0.0000,0.1111,0.8190,18,1.9231
+devil_scots,barrow_1,Share within 1 km of a barrow or burial cairn,rand,0.0556,0.0411,0.0000,0.1111,1.0000,18,1.3514
+devil_scots,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",match,0.2222,0.0633,0.0000,0.1667,0.0390,18,3.5088
+devil_scots,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",rand,0.2222,0.0878,0.0000,0.2222,0.1150,18,2.5316
+devil_scots,hillfort_2,Share within 2 km of a hillfort,match,0.5000,0.3189,0.1111,0.5000,0.1380,18,1.5679
+devil_scots,hillfort_2,Share within 2 km of a hillfort,rand,0.5000,0.2311,0.0556,0.4444,0.0090,18,2.1635
+devil_scots,church_1,Share within 1 km of a church,match,0.3333,0.2278,0.0556,0.4444,0.3580,18,1.4634
+devil_scots,church_1,Share within 1 km of a church,rand,0.3333,0.1933,0.0556,0.3889,0.2000,18,1.7241
+devil_scots,church_med,Median distance to a church (km),match,1.4908,1.8795,1.2896,2.9378,0.2360,18,0.7932
+devil_scots,church_med,Median distance to a church (km),rand,1.4908,2.0562,1.3782,2.9442,0.0980,18,0.7250
+devil_scots,well_2,Share within 2 km of a holy well,match,0.0556,0.0233,0.0000,0.1111,0.7140,18,2.3810
+devil_scots,well_2,Share within 2 km of a holy well,rand,0.0556,0.0144,0.0000,0.1111,0.4860,18,3.8462
+devil_scots,water_025,Share within 250 m of a named watercourse,match,0.2778,0.3056,0.1667,0.4444,1.0000,18,0.9091
+devil_scots,water_025,Share within 250 m of a named watercourse,rand,0.2778,0.2400,0.0556,0.4444,0.9180,18,1.1574
+devil_scots,relief_med,Median relief within 1 km (m),match,85.5012,103.9659,72.6364,145.6979,0.2870,18,0.8224
+devil_scots,relief_med,Median relief within 1 km (m),rand,85.5012,77.9792,53.8741,122.9714,0.7750,18,1.0965
+devil_scots,slope_med,Median slope (degrees),match,5.1187,3.0553,1.8307,5.4041,0.0700,18,1.6753
+devil_scots,slope_med,Median slope (degrees),rand,5.1187,2.5326,1.5591,4.4273,0.0110,18,2.0211
+devil_scots,steep,Share on ground steeper than 10 degrees,match,0.1111,0.1011,0.0000,0.2222,1.0000,18,1.0989
+devil_scots,steep,Share on ground steeper than 10 degrees,rand,0.1111,0.1044,0.0000,0.2222,1.0000,18,1.0638
+devil_scots,elev_med,Median elevation (m),match,95.9972,78.6957,35.6567,149.3896,0.6430,18,1.2199
+devil_scots,elev_med,Median elevation (m),rand,95.9972,121.3684,71.7271,205.5238,0.3530,18,0.7910
+devil_scots,edge_2,Share within 2 km of a county boundary,match,0.1111,0.1433,0.0000,0.2778,0.9750,18,0.7752
+devil_scots,edge_2,Share within 2 km of a county boundary,rand,0.1111,0.1833,0.0556,0.3347,0.6130,18,0.6061
+devil_scots,edge_med,Median distance to a county boundary (km),match,10.8634,10.8862,5.9669,15.9576,0.9840,18,0.9979
+devil_scots,edge_med,Median distance to a county boundary (km),rand,10.8634,8.0367,4.1528,13.5944,0.3080,18,1.3517
+devil_north,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",match,0.3902,0.2146,0.1220,0.3171,0.0110,41,1.8182
+devil_north,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",rand,0.3902,0.1429,0.0488,0.2439,0.0000,41,2.7304
+devil_north,prehist_med,Median distance to a prehistoric monument (km),match,1.3674,2.3451,1.6931,3.3336,0.0020,41,0.5831
+devil_north,prehist_med,Median distance to a prehistoric monument (km),rand,1.3674,2.6333,2.0031,3.5702,0.0000,41,0.5193
+devil_north,barrow_1,Share within 1 km of a barrow or burial cairn,match,0.0244,0.0439,0.0000,0.0976,0.8630,41,0.5556
+devil_north,barrow_1,Share within 1 km of a barrow or burial cairn,rand,0.0244,0.0410,0.0000,0.0976,0.9840,41,0.5952
+devil_north,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",match,0.1220,0.0605,0.0000,0.1463,0.1920,41,2.0161
+devil_north,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",rand,0.1220,0.0873,0.0244,0.1707,0.5820,41,1.3966
+devil_north,hillfort_2,Share within 2 km of a hillfort,match,0.4634,0.3322,0.2195,0.4634,0.0560,41,1.3950
+devil_north,hillfort_2,Share within 2 km of a hillfort,rand,0.4634,0.2176,0.0976,0.3415,0.0000,41,2.1300
+devil_north,church_1,Share within 1 km of a church,match,0.2683,0.2220,0.0976,0.3415,0.5720,41,1.2088
+devil_north,church_1,Share within 1 km of a church,rand,0.2683,0.1946,0.0976,0.3171,0.3320,41,1.3784
+devil_north,church_med,Median distance to a church (km),match,1.5517,1.9755,1.5444,2.5273,0.0560,41,0.7855
+devil_north,church_med,Median distance to a church (km),rand,1.5517,1.9535,1.4849,2.4148,0.0950,41,0.7943
+devil_north,well_2,Share within 2 km of a holy well,match,0.0488,0.0454,0.0000,0.1220,1.0000,41,1.0753
+devil_north,well_2,Share within 2 km of a holy well,rand,0.0488,0.0176,0.0000,0.0732,0.3170,41,2.7778
+devil_north,water_025,Share within 250 m of a named watercourse,match,0.3902,0.3478,0.2439,0.4390,0.5220,41,1.1220
+devil_north,water_025,Share within 250 m of a named watercourse,rand,0.3902,0.2151,0.0976,0.3415,0.0170,41,1.8141
+devil_north,relief_med,Median relief within 1 km (m),match,75.2763,81.1488,62.3400,102.7296,0.6260,41,0.9276
+devil_north,relief_med,Median relief within 1 km (m),rand,75.2763,63.3728,49.5813,84.4082,0.2450,41,1.1878
+devil_north,slope_med,Median slope (degrees),match,3.5772,2.6958,1.8431,3.7929,0.1220,41,1.3270
+devil_north,slope_med,Median slope (degrees),rand,3.5772,2.1460,1.5528,2.9851,0.0050,41,1.6669
+devil_north,steep,Share on ground steeper than 10 degrees,match,0.0732,0.1015,0.0244,0.1707,0.7470,41,0.7212
+devil_north,steep,Share on ground steeper than 10 degrees,rand,0.0732,0.0659,0.0000,0.1220,1.0000,41,1.1111
+devil_north,elev_med,Median elevation (m),match,34.0733,41.3445,27.7767,70.5389,0.3450,41,0.8241
+devil_north,elev_med,Median elevation (m),rand,34.0733,96.4683,71.1255,131.2292,0.0000,41,0.3532
+devil_north,edge_2,Share within 2 km of a county boundary,match,0.0732,0.1088,0.0244,0.1951,0.6340,41,0.6726
+devil_north,edge_2,Share within 2 km of a county boundary,rand,0.0732,0.1332,0.0488,0.2439,0.3080,41,0.5495
+devil_north,edge_med,Median distance to a county boundary (km),match,14.5781,14.6874,10.8150,19.0389,0.9690,41,0.9926
+devil_north,edge_med,Median distance to a county boundary (km),rand,14.5781,12.6873,8.1089,17.1073,0.3760,41,1.1490
+devil_south,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",match,0.2576,0.1715,0.0909,0.2576,0.0760,66,1.5018
+devil_south,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",rand,0.2576,0.1282,0.0606,0.2121,0.0040,66,2.0095
+devil_south,prehist_med,Median distance to a prehistoric monument (km),match,2.8321,2.9165,2.2976,3.7365,0.8430,66,0.9711
+devil_south,prehist_med,Median distance to a prehistoric monument (km),rand,2.8321,3.3440,2.5898,4.1047,0.1610,66,0.8469
+devil_south,barrow_1,Share within 1 km of a barrow or burial cairn,match,0.1970,0.1103,0.0455,0.1818,0.0390,66,1.7857
+devil_south,barrow_1,Share within 1 km of a barrow or burial cairn,rand,0.1970,0.0942,0.0303,0.1667,0.0090,66,2.0900
+devil_south,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",match,0.0152,0.0288,0.0000,0.0758,0.7950,66,0.5263
+devil_south,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",rand,0.0152,0.0267,0.0000,0.0606,0.9150,66,0.5682
+devil_south,hillfort_2,Share within 2 km of a hillfort,match,0.1667,0.1455,0.0758,0.2273,0.7420,66,1.1458
+devil_south,hillfort_2,Share within 2 km of a hillfort,rand,0.1667,0.1255,0.0606,0.1970,0.3180,66,1.3285
+devil_south,church_1,Share within 1 km of a church,match,0.3788,0.3573,0.2424,0.4697,0.7920,66,1.0602
+devil_south,church_1,Share within 1 km of a church,rand,0.3788,0.3764,0.2576,0.4848,1.0000,66,1.0064
+devil_south,church_med,Median distance to a church (km),match,1.1434,1.2559,1.0421,1.4595,0.3000,66,0.9105
+devil_south,church_med,Median distance to a church (km),rand,1.1434,1.2156,1.0243,1.4254,0.4640,66,0.9406
+devil_south,well_2,Share within 2 km of a holy well,match,0.0606,0.0276,0.0000,0.0606,0.1900,66,2.1978
+devil_south,well_2,Share within 2 km of a holy well,rand,0.0606,0.0242,0.0000,0.0606,0.1370,66,2.5000
+devil_south,water_025,Share within 250 m of a named watercourse,match,0.2121,0.1870,0.1212,0.2576,0.6120,66,1.1345
+devil_south,water_025,Share within 250 m of a named watercourse,rand,0.2121,0.1388,0.0606,0.2273,0.1330,66,1.5284
+devil_south,relief_med,Median relief within 1 km (m),match,57.9281,60.5172,49.6757,72.7362,0.6380,66,0.9572
+devil_south,relief_med,Median relief within 1 km (m),rand,57.9281,45.8227,38.0399,55.4860,0.0130,66,1.2642
+devil_south,slope_med,Median slope (degrees),match,2.6743,2.0191,1.5297,2.5950,0.0310,66,1.3245
+devil_south,slope_med,Median slope (degrees),rand,2.6743,1.5910,1.2145,2.0479,0.0000,66,1.6809
+devil_south,steep,Share on ground steeper than 10 degrees,match,0.1061,0.0609,0.0152,0.1061,0.1550,66,1.7413
+devil_south,steep,Share on ground steeper than 10 degrees,rand,0.1061,0.0179,0.0000,0.0455,0.0000,66,5.9322
+devil_south,elev_med,Median elevation (m),match,72.4937,56.1157,44.9662,75.0448,0.0860,66,1.2919
+devil_south,elev_med,Median elevation (m),rand,72.4937,72.6348,57.8426,89.0259,1.0000,66,0.9981
+devil_south,edge_2,Share within 2 km of a county boundary,match,0.1364,0.1455,0.0754,0.2273,0.9900,66,0.9375
+devil_south,edge_2,Share within 2 km of a county boundary,rand,0.1364,0.1464,0.0758,0.2273,1.0000,66,0.9317
+devil_south,edge_med,Median distance to a county boundary (km),match,9.9613,9.9746,7.2972,12.7339,0.9750,66,0.9987
+devil_south,edge_med,Median distance to a county boundary (km),rand,9.9613,9.3966,7.0709,12.3909,0.7160,66,1.0601
+saint,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",match,0.1858,0.1850,0.1501,0.2189,1.0000,393,1.0041
+saint,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",rand,0.1858,0.1491,0.1170,0.1807,0.0310,393,1.2457
+saint,prehist_med,Median distance to a prehistoric monument (km),match,2.5974,2.6147,2.3368,2.9065,0.8560,393,0.9934
+saint,prehist_med,Median distance to a prehistoric monument (km),rand,2.5974,2.7461,2.4734,3.0213,0.3230,393,0.9458
+saint,barrow_1,Share within 1 km of a barrow or burial cairn,match,0.0992,0.1012,0.0738,0.1298,0.9810,393,0.9804
+saint,barrow_1,Share within 1 km of a barrow or burial cairn,rand,0.0992,0.0905,0.0636,0.1196,0.6030,393,1.0961
+saint,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",match,0.0407,0.0505,0.0305,0.0712,0.4040,393,0.8065
+saint,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",rand,0.0407,0.0586,0.0382,0.0814,0.1220,393,0.6944
+saint,hillfort_2,Share within 2 km of a hillfort,match,0.1858,0.2059,0.1705,0.2443,0.2850,393,0.9021
+saint,hillfort_2,Share within 2 km of a hillfort,rand,0.1858,0.1699,0.1374,0.2061,0.3860,393,1.0931
+saint,church_1,Share within 1 km of a church,match,0.4733,0.3212,0.2774,0.3664,0.0000,393,1.4736
+saint,church_1,Share within 1 km of a church,rand,0.4733,0.3489,0.3053,0.3944,0.0000,393,1.3567
+saint,church_med,Median distance to a church (km),match,1.0669,1.3897,1.2799,1.5007,0.0000,393,0.7677
+saint,church_med,Median distance to a church (km),rand,1.0669,1.3257,1.2228,1.4307,0.0000,393,0.8048
+saint,well_2,Share within 2 km of a holy well,match,0.1221,0.0435,0.0254,0.0611,0.0000,393,2.8070
+saint,well_2,Share within 2 km of a holy well,rand,0.1221,0.0359,0.0204,0.0560,0.0000,393,3.3994
+saint,water_025,Share within 250 m of a named watercourse,match,0.1959,0.1724,0.1399,0.2061,0.2190,393,1.1364
+saint,water_025,Share within 250 m of a named watercourse,rand,0.1959,0.1784,0.1425,0.2188,0.4010,393,1.0981
+saint,relief_med,Median relief within 1 km (m),match,51.4990,56.7455,51.8512,61.8030,0.0340,393,0.9075
+saint,relief_med,Median relief within 1 km (m),rand,51.4990,52.3663,48.2457,57.0475,0.6850,393,0.9834
+saint,slope_med,Median slope (degrees),match,1.6674,1.8743,1.6559,2.1239,0.0610,393,0.8896
+saint,slope_med,Median slope (degrees),rand,1.6674,1.8144,1.6128,2.0269,0.1380,393,0.9190
+saint,steep,Share on ground steeper than 10 degrees,match,0.0458,0.0431,0.0254,0.0636,0.8820,393,1.0626
+saint,steep,Share on ground steeper than 10 degrees,rand,0.0458,0.0373,0.0204,0.0560,0.4240,393,1.2295
+saint,elev_med,Median elevation (m),match,44.1282,50.3393,43.4190,57.3194,0.0790,393,0.8766
+saint,elev_med,Median elevation (m),rand,44.1282,76.9577,69.3194,84.3280,0.0000,393,0.5734
+saint,edge_2,Share within 2 km of a county boundary,match,0.1043,0.1156,0.0865,0.1450,0.5110,393,0.9023
+saint,edge_2,Share within 2 km of a county boundary,rand,0.1043,0.1213,0.0916,0.1527,0.3200,393,0.8599
+saint,edge_med,Median distance to a county boundary (km),match,15.2327,13.4131,12.1058,14.8837,0.0130,393,1.1357
+saint,edge_med,Median distance to a county boundary (km),rand,15.2327,12.2078,10.9049,13.6283,0.0000,393,1.2478
+saint_own,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",match,0.1806,0.1802,0.1419,0.2194,1.0000,310,1.0025
+saint_own,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",rand,0.1806,0.1506,0.1129,0.1871,0.1210,310,1.1997
+saint_own,prehist_med,Median distance to a prehistoric monument (km),match,2.5054,2.6110,2.3156,2.9385,0.4860,310,0.9596
+saint_own,prehist_med,Median distance to a prehistoric monument (km),rand,2.5054,2.6937,2.3997,3.0000,0.2400,310,0.9301
+saint_own,barrow_1,Share within 1 km of a barrow or burial cairn,match,0.1000,0.0963,0.0677,0.1258,0.8830,310,1.0382
+saint_own,barrow_1,Share within 1 km of a barrow or burial cairn,rand,0.1000,0.0892,0.0613,0.1194,0.5180,310,1.1216
+saint_own,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",match,0.0323,0.0515,0.0290,0.0774,0.1320,310,0.6266
+saint_own,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",rand,0.0323,0.0630,0.0387,0.0871,0.0240,310,0.5123
+saint_own,hillfort_2,Share within 2 km of a hillfort,match,0.1903,0.2053,0.1645,0.2484,0.5190,310,0.9271
+saint_own,hillfort_2,Share within 2 km of a hillfort,rand,0.1903,0.1730,0.1355,0.2129,0.4030,310,1.1003
+saint_own,church_1,Share within 1 km of a church,match,0.4677,0.3107,0.2613,0.3613,0.0000,310,1.5054
+saint_own,church_1,Share within 1 km of a church,rand,0.4677,0.3359,0.2871,0.3839,0.0000,310,1.3926
+saint_own,church_med,Median distance to a church (km),match,1.0698,1.4149,1.2969,1.5421,0.0000,310,0.7561
+saint_own,church_med,Median distance to a church (km),rand,1.0698,1.3599,1.2452,1.4796,0.0000,310,0.7866
+saint_own,well_2,Share within 2 km of a holy well,match,0.1290,0.0410,0.0226,0.0613,0.0000,310,3.1496
+saint_own,well_2,Share within 2 km of a holy well,rand,0.1290,0.0352,0.0161,0.0581,0.0000,310,3.6697
+saint_own,water_025,Share within 250 m of a named watercourse,match,0.1968,0.1776,0.1419,0.2161,0.3620,310,1.1079
+saint_own,water_025,Share within 250 m of a named watercourse,rand,0.1968,0.1845,0.1452,0.2258,0.6290,310,1.0668
+saint_own,relief_med,Median relief within 1 km (m),match,53.7101,59.5420,53.6800,65.6957,0.0510,310,0.9021
+saint_own,relief_med,Median relief within 1 km (m),rand,53.7101,55.1834,49.9425,61.0855,0.6160,310,0.9733
+saint_own,slope_med,Median slope (degrees),match,1.8065,1.9803,1.7251,2.2704,0.2000,310,0.9122
+saint_own,slope_med,Median slope (degrees),rand,1.8065,1.9010,1.6815,2.1466,0.4030,310,0.9503
+saint_own,steep,Share on ground steeper than 10 degrees,match,0.0516,0.0473,0.0258,0.0677,0.7610,310,1.0914
+saint_own,steep,Share on ground steeper than 10 degrees,rand,0.0516,0.0418,0.0226,0.0645,0.4490,310,1.2346
+saint_own,elev_med,Median elevation (m),match,52.7003,61.1038,52.6449,70.3238,0.0540,310,0.8625
+saint_own,elev_med,Median elevation (m),rand,52.7003,83.7142,74.8654,93.1550,0.0000,310,0.6295
+saint_own,edge_2,Share within 2 km of a county boundary,match,0.1032,0.1229,0.0903,0.1581,0.2820,310,0.8399
+saint_own,edge_2,Share within 2 km of a county boundary,rand,0.1032,0.1278,0.0935,0.1645,0.2100,310,0.8077
+saint_own,edge_med,Median distance to a county boundary (km),match,14.1147,12.3615,11.0113,13.8892,0.0200,310,1.1418
+saint_own,edge_med,Median distance to a county boundary (km),rand,14.1147,11.6805,10.1859,13.2046,0.0030,310,1.2084
+saint_parish,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",match,0.2048,0.2029,0.1205,0.2892,1.0000,83,1.0095
+saint_parish,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",rand,0.2048,0.1436,0.0723,0.2169,0.1220,83,1.4262
+saint_parish,prehist_med,Median distance to a prehistoric monument (km),match,3.0835,2.6276,2.0675,3.2998,0.1710,83,1.1735
+saint_parish,prehist_med,Median distance to a prehistoric monument (km),rand,3.0835,2.9629,2.3710,3.5889,0.7100,83,1.0407
+saint_parish,barrow_1,Share within 1 km of a barrow or burial cairn,match,0.0964,0.1195,0.0602,0.1928,0.6140,83,0.8065
+saint_parish,barrow_1,Share within 1 km of a barrow or burial cairn,rand,0.0964,0.0957,0.0361,0.1566,1.0000,83,1.0076
+saint_parish,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",match,0.0723,0.0467,0.0120,0.0964,0.3390,83,1.5464
+saint_parish,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",rand,0.0723,0.0424,0.0120,0.0843,0.2690,83,1.7045
+saint_parish,hillfort_2,Share within 2 km of a hillfort,match,0.1687,0.2082,0.1325,0.2892,0.3590,83,0.8102
+saint_parish,hillfort_2,Share within 2 km of a hillfort,rand,0.1687,0.1586,0.0843,0.2289,0.8830,83,1.0638
+saint_parish,church_1,Share within 1 km of a church,match,0.4940,0.3602,0.2651,0.4578,0.0100,83,1.3712
+saint_parish,church_1,Share within 1 km of a church,rand,0.4940,0.3973,0.3012,0.4940,0.0770,83,1.2432
+saint_parish,church_med,Median distance to a church (km),match,1.0341,1.2906,1.0887,1.5203,0.0100,83,0.8012
+saint_parish,church_med,Median distance to a church (km),rand,1.0341,1.1987,1.0129,1.4116,0.0900,83,0.8626
+saint_parish,well_2,Share within 2 km of a holy well,match,0.0964,0.0530,0.0120,0.0967,0.1250,83,1.8182
+saint_parish,well_2,Share within 2 km of a holy well,rand,0.0964,0.0388,0.0000,0.0843,0.0190,83,2.4845
+saint_parish,water_025,Share within 250 m of a named watercourse,match,0.1928,0.1530,0.0843,0.2169,0.3440,83,1.2598
+saint_parish,water_025,Share within 250 m of a named watercourse,rand,0.1928,0.1559,0.0843,0.2289,0.4150,83,1.2365
+saint_parish,relief_med,Median relief within 1 km (m),match,42.8277,48.2692,38.8599,57.9395,0.2630,83,0.8873
+saint_parish,relief_med,Median relief within 1 km (m),rand,42.8277,44.0940,36.6754,51.8475,0.7490,83,0.9713
+saint_parish,slope_med,Median slope (degrees),match,1.1268,1.4829,1.0906,2.0481,0.0760,83,0.7599
+saint_parish,slope_med,Median slope (degrees),rand,1.1268,1.4652,1.1495,1.9179,0.0390,83,0.7691
+saint_parish,steep,Share on ground steeper than 10 degrees,match,0.0241,0.0275,0.0000,0.0602,1.0000,83,0.8772
+saint_parish,steep,Share on ground steeper than 10 degrees,rand,0.0241,0.0202,0.0000,0.0482,1.0000,83,1.1905
+saint_parish,elev_med,Median elevation (m),match,17.6696,24.3515,17.0940,32.5996,0.0730,83,0.7256
+saint_parish,elev_med,Median elevation (m),rand,17.6696,56.7123,44.7245,69.8529,0.0000,83,0.3116
+saint_parish,edge_2,Share within 2 km of a county boundary,match,0.1084,0.0884,0.0361,0.1446,0.5960,83,1.2262
+saint_parish,edge_2,Share within 2 km of a county boundary,rand,0.1084,0.0971,0.0482,0.1566,0.8450,83,1.1166
+saint_parish,edge_med,Median distance to a county boundary (km),match,18.0281,18.9590,14.7706,23.3669,0.5890,83,0.9509
+saint_parish,edge_med,Median distance to a county boundary (km),rand,18.0281,15.0954,11.5641,19.3854,0.1750,83,1.1943
+saint_inland,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",match,0.1528,0.1522,0.1065,0.1944,1.0000,216,1.0036
+saint_inland,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",rand,0.1528,0.1169,0.0787,0.1574,0.1230,216,1.3064
+saint_inland,prehist_med,Median distance to a prehistoric monument (km),match,2.6688,2.8268,2.4600,3.2245,0.4070,216,0.9441
+saint_inland,prehist_med,Median distance to a prehistoric monument (km),rand,2.6688,3.1178,2.7334,3.5325,0.0250,216,0.8560
+saint_inland,barrow_1,Share within 1 km of a barrow or burial cairn,match,0.0880,0.0888,0.0556,0.1250,1.0000,216,0.9906
+saint_inland,barrow_1,Share within 1 km of a barrow or burial cairn,rand,0.0880,0.0681,0.0370,0.1019,0.2910,216,1.2925
+saint_inland,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",match,0.0278,0.0475,0.0231,0.0741,0.1870,216,0.5848
+saint_inland,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",rand,0.0278,0.0433,0.0185,0.0694,0.3200,216,0.6410
+saint_inland,hillfort_2,Share within 2 km of a hillfort,match,0.1806,0.1721,0.1296,0.2176,0.8270,216,1.0490
+saint_inland,hillfort_2,Share within 2 km of a hillfort,rand,0.1806,0.1381,0.0972,0.1806,0.0750,216,1.3070
+saint_inland,church_1,Share within 1 km of a church,match,0.4861,0.3074,0.2500,0.3657,0.0000,216,1.5813
+saint_inland,church_1,Share within 1 km of a church,rand,0.4861,0.3418,0.2824,0.3981,0.0000,216,1.4224
+saint_inland,church_med,Median distance to a church (km),match,1.0548,1.4006,1.2654,1.5362,0.0000,216,0.7531
+saint_inland,church_med,Median distance to a church (km),rand,1.0548,1.3440,1.2067,1.4821,0.0000,216,0.7848
+saint_inland,well_2,Share within 2 km of a holy well,match,0.1111,0.0265,0.0093,0.0463,0.0000,216,4.1958
+saint_inland,well_2,Share within 2 km of a holy well,rand,0.1111,0.0229,0.0046,0.0463,0.0000,216,4.8583
+saint_inland,water_025,Share within 250 m of a named watercourse,match,0.2269,0.1859,0.1389,0.2315,0.1030,216,1.2201
+saint_inland,water_025,Share within 250 m of a named watercourse,rand,0.2269,0.1981,0.1481,0.2500,0.3220,216,1.1449
+saint_inland,relief_med,Median relief within 1 km (m),match,57.2436,62.1868,55.4186,70.1164,0.1710,216,0.9205
+saint_inland,relief_med,Median relief within 1 km (m),rand,57.2436,50.7954,44.7769,58.4473,0.0960,216,1.1269
+saint_inland,slope_med,Median slope (degrees),match,1.8434,2.0144,1.7278,2.3346,0.2500,216,0.9151
+saint_inland,slope_med,Median slope (degrees),rand,1.8434,1.7439,1.4757,2.0233,0.4500,216,1.0570
+saint_inland,steep,Share on ground steeper than 10 degrees,match,0.0509,0.0424,0.0185,0.0694,0.5700,216,1.2009
+saint_inland,steep,Share on ground steeper than 10 degrees,rand,0.0509,0.0452,0.0231,0.0741,0.7170,216,1.1270
+saint_inland,elev_med,Median elevation (m),match,80.4849,102.5400,90.0893,115.9868,0.0010,216,0.7849
+saint_inland,elev_med,Median elevation (m),rand,80.4849,86.2904,74.7887,98.4796,0.2750,216,0.9327
+saint_inland,edge_2,Share within 2 km of a county boundary,match,0.1204,0.1545,0.1111,0.1991,0.1660,216,0.7789
+saint_inland,edge_2,Share within 2 km of a county boundary,rand,0.1204,0.1510,0.1065,0.1991,0.1970,216,0.7971
+saint_inland,edge_med,Median distance to a county boundary (km),match,10.5138,8.7089,7.3525,10.1696,0.0150,216,1.2073
+saint_inland,edge_med,Median distance to a county boundary (km),rand,10.5138,9.0255,7.5901,10.4091,0.0420,216,1.1649
+wc_household,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",match,0.2500,0.1783,0.0417,0.3333,0.5010,24,1.4019
+wc_household,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",rand,0.2500,0.1758,0.0417,0.3333,0.4810,24,1.4218
+wc_household,prehist_med,Median distance to a prehistoric monument (km),match,1.6584,2.3349,1.5305,3.3468,0.0830,24,0.7102
+wc_household,prehist_med,Median distance to a prehistoric monument (km),rand,1.6584,2.4063,1.6090,3.4227,0.0700,24,0.6892
+wc_household,barrow_1,Share within 1 km of a barrow or burial cairn,match,0.0833,0.0592,0.0000,0.1667,0.8570,24,1.4085
+wc_household,barrow_1,Share within 1 km of a barrow or burial cairn,rand,0.0833,0.0908,0.0000,0.2083,1.0000,24,0.9174
+wc_household,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",match,0.0833,0.0575,0.0000,0.1667,0.8150,24,1.4493
+wc_household,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",rand,0.0833,0.0767,0.0000,0.2083,1.0000,24,1.0870
+wc_household,hillfort_2,Share within 2 km of a hillfort,match,0.2917,0.2217,0.0833,0.3750,0.5480,24,1.3158
+wc_household,hillfort_2,Share within 2 km of a hillfort,rand,0.2917,0.1908,0.0833,0.3333,0.2660,24,1.5284
+wc_household,church_1,Share within 1 km of a church,match,0.4583,0.3008,0.1250,0.5000,0.1430,24,1.5235
+wc_household,church_1,Share within 1 km of a church,rand,0.4583,0.2683,0.0833,0.4583,0.0610,24,1.7081
+wc_household,church_med,Median distance to a church (km),match,1.1434,1.5533,1.0655,2.0614,0.1030,24,0.7361
+wc_household,church_med,Median distance to a church (km),rand,1.1434,1.4907,1.1186,2.0362,0.0660,24,0.7670
+wc_household,well_2,Share within 2 km of a holy well,match,0.0833,0.0650,0.0000,0.1667,0.9600,24,1.2821
+wc_household,well_2,Share within 2 km of a holy well,rand,0.0833,0.0367,0.0000,0.1250,0.4330,24,2.2727
+wc_household,water_025,Share within 250 m of a named watercourse,match,0.2917,0.2633,0.1667,0.3750,0.8600,24,1.1076
+wc_household,water_025,Share within 250 m of a named watercourse,rand,0.2917,0.1792,0.0417,0.3750,0.2450,24,1.6279
+wc_household,relief_med,Median relief within 1 km (m),match,122.3072,97.8863,73.9295,128.4997,0.0920,24,1.2495
+wc_household,relief_med,Median relief within 1 km (m),rand,122.3072,62.4252,48.6641,84.1191,0.0000,24,1.9593
+wc_household,slope_med,Median slope (degrees),match,5.7147,3.4411,2.0779,5.6681,0.0450,24,1.6607
+wc_household,slope_med,Median slope (degrees),rand,5.7147,2.2689,1.5248,3.2796,0.0000,24,2.5187
+wc_household,steep,Share on ground steeper than 10 degrees,match,0.2083,0.1567,0.0417,0.2917,0.6010,24,1.3298
+wc_household,steep,Share on ground steeper than 10 degrees,rand,0.2083,0.0542,0.0000,0.1250,0.0030,24,3.8462
+wc_household,elev_med,Median elevation (m),match,63.8641,37.1666,22.8917,61.2287,0.0340,24,1.7183
+wc_household,elev_med,Median elevation (m),rand,63.8641,108.7060,76.3557,139.2080,0.0050,24,0.5875
+wc_household,edge_2,Share within 2 km of a county boundary,match,0.0833,0.1158,0.0000,0.2500,0.9250,24,0.7194
+wc_household,edge_2,Share within 2 km of a county boundary,rand,0.0833,0.1358,0.0406,0.2510,0.6660,24,0.6135
+wc_household,edge_med,Median distance to a county boundary (km),match,10.5276,11.5738,6.6039,18.7703,0.7620,24,0.9096
+wc_household,edge_med,Median distance to a county boundary (km),rand,10.5276,9.9837,5.9109,16.2969,0.8920,24,1.0545
+wc_hollow,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",match,0.1905,0.1276,0.0000,0.2857,0.5300,21,1.4925
+wc_hollow,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",rand,0.1905,0.0810,0.0000,0.1905,0.1510,21,2.3529
+wc_hollow,prehist_med,Median distance to a prehistoric monument (km),match,3.9806,3.5224,2.1138,5.1356,0.5680,21,1.1301
+wc_hollow,prehist_med,Median distance to a prehistoric monument (km),rand,3.9806,3.9662,2.5679,5.7478,0.9940,21,1.0036
+wc_hollow,barrow_1,Share within 1 km of a barrow or burial cairn,match,0.0952,0.0943,0.0000,0.2381,1.0000,21,1.0101
+wc_hollow,barrow_1,Share within 1 km of a barrow or burial cairn,rand,0.0952,0.0486,0.0000,0.1429,0.5460,21,1.9608
+wc_hollow,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",match,0.0952,0.0457,0.0000,0.1429,0.5020,21,2.0833
+wc_hollow,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",rand,0.0952,0.0324,0.0000,0.0952,0.2980,21,2.9412
+wc_hollow,hillfort_2,Share within 2 km of a hillfort,match,0.1429,0.1305,0.0000,0.2857,1.0000,21,1.0949
+wc_hollow,hillfort_2,Share within 2 km of a hillfort,rand,0.1429,0.0857,0.0000,0.1905,0.5350,21,1.6667
+wc_hollow,church_1,Share within 1 km of a church,match,0.3333,0.2829,0.0952,0.4762,0.7440,21,1.1785
+wc_hollow,church_1,Share within 1 km of a church,rand,0.3333,0.3133,0.1429,0.5238,1.0000,21,1.0638
+wc_hollow,church_med,Median distance to a church (km),match,1.2987,1.4537,1.0343,1.9859,0.4380,21,0.8934
+wc_hollow,church_med,Median distance to a church (km),rand,1.2987,1.3967,1.0104,1.8816,0.6590,21,0.9298
+wc_hollow,well_2,Share within 2 km of a holy well,match,0.0476,0.0162,0.0000,0.0952,0.6110,21,2.9412
+wc_hollow,well_2,Share within 2 km of a holy well,rand,0.0476,0.0162,0.0000,0.0952,0.5470,21,2.9412
+wc_hollow,water_025,Share within 250 m of a named watercourse,match,0.2857,0.2486,0.0952,0.4286,0.8610,21,1.1494
+wc_hollow,water_025,Share within 250 m of a named watercourse,rand,0.2857,0.1619,0.0476,0.3333,0.2290,21,1.7647
+wc_hollow,relief_med,Median relief within 1 km (m),match,50.6885,63.2378,44.9559,90.1079,0.2220,21,0.8016
+wc_hollow,relief_med,Median relief within 1 km (m),rand,50.6885,40.9340,29.6410,58.3642,0.2290,21,1.2383
+wc_hollow,slope_med,Median slope (degrees),match,1.2383,1.9088,1.1754,2.9764,0.0680,21,0.6487
+wc_hollow,slope_med,Median slope (degrees),rand,1.2383,1.4734,0.8665,2.2666,0.5740,21,0.8404
+wc_hollow,steep,Share on ground steeper than 10 degrees,match,0.0000,0.0343,0.0000,0.0952,0.9070,21,0.0000
+wc_hollow,steep,Share on ground steeper than 10 degrees,rand,0.0000,0.0257,0.0000,0.0952,1.0000,21,0.0000
+wc_hollow,elev_med,Median elevation (m),match,73.0000,96.1587,73.0187,136.8306,0.0500,21,0.7592
+wc_hollow,elev_med,Median elevation (m),rand,73.0000,76.7902,49.3566,110.9841,0.8360,21,0.9506
+wc_hollow,edge_2,Share within 2 km of a county boundary,match,0.1905,0.1867,0.0476,0.3333,1.0000,21,1.0204
+wc_hollow,edge_2,Share within 2 km of a county boundary,rand,0.1905,0.1714,0.0476,0.3333,1.0000,21,1.1111
+wc_hollow,edge_med,Median distance to a county boundary (km),match,5.4000,8.1498,4.3424,12.4253,0.1590,21,0.6626
+wc_hollow,edge_med,Median distance to a county boundary (km),rand,5.4000,8.3201,4.3464,13.1097,0.1720,21,0.6490
+wc_wood,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",match,0.3333,0.0880,0.0000,0.2667,0.0110,15,3.7879
+wc_wood,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",rand,0.3333,0.0627,0.0000,0.2000,0.0020,15,5.3191
+wc_wood,prehist_med,Median distance to a prehistoric monument (km),match,2.5227,4.0444,2.5098,6.0242,0.0520,15,0.6238
+wc_wood,prehist_med,Median distance to a prehistoric monument (km),rand,2.5227,4.5637,2.6041,7.4192,0.0400,15,0.5528
+wc_wood,barrow_1,Share within 1 km of a barrow or burial cairn,match,0.2000,0.0507,0.0000,0.2000,0.0950,15,3.9474
+wc_wood,barrow_1,Share within 1 km of a barrow or burial cairn,rand,0.2000,0.0387,0.0000,0.1333,0.0330,15,5.1724
+wc_wood,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",match,0.0000,0.0200,0.0000,0.1333,1.0000,15,0.0000
+wc_wood,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",rand,0.0000,0.0160,0.0000,0.0667,1.0000,15,0.0000
+wc_wood,hillfort_2,Share within 2 km of a hillfort,match,0.2667,0.0933,0.0000,0.2667,0.0890,15,2.8571
+wc_wood,hillfort_2,Share within 2 km of a hillfort,rand,0.2667,0.0853,0.0000,0.2000,0.0480,15,3.1250
+wc_wood,church_1,Share within 1 km of a church,match,0.5333,0.3000,0.1333,0.5333,0.0920,15,1.7778
+wc_wood,church_1,Share within 1 km of a church,rand,0.5333,0.3960,0.2000,0.6667,0.4270,15,1.3468
+wc_wood,church_med,Median distance to a church (km),match,0.8574,1.3103,0.9499,1.6850,0.0110,15,0.6543
+wc_wood,church_med,Median distance to a church (km),rand,0.8574,1.1990,0.7764,1.6508,0.1230,15,0.7151
+wc_wood,well_2,Share within 2 km of a holy well,match,0.0000,0.0107,0.0000,0.0667,1.0000,15,0.0000
+wc_wood,well_2,Share within 2 km of a holy well,rand,0.0000,0.0093,0.0000,0.0667,1.0000,15,0.0000
+wc_wood,water_025,Share within 250 m of a named watercourse,match,0.1333,0.1267,0.0000,0.3333,1.0000,15,1.0526
+wc_wood,water_025,Share within 250 m of a named watercourse,rand,0.1333,0.1253,0.0000,0.3333,1.0000,15,1.0638
+wc_wood,relief_med,Median relief within 1 km (m),match,61.6295,43.0006,28.5994,63.7186,0.0900,15,1.4332
+wc_wood,relief_med,Median relief within 1 km (m),rand,61.6295,34.3370,23.1765,51.8555,0.0070,15,1.7948
+wc_wood,slope_med,Median slope (degrees),match,2.6583,1.6487,1.0333,2.6591,0.0540,15,1.6124
+wc_wood,slope_med,Median slope (degrees),rand,2.6583,1.2182,0.6932,2.0043,0.0020,15,2.1822
+wc_wood,steep,Share on ground steeper than 10 degrees,match,0.0000,0.0240,0.0000,0.1333,1.0000,15,0.0000
+wc_wood,steep,Share on ground steeper than 10 degrees,rand,0.0000,0.0133,0.0000,0.0667,1.0000,15,0.0000
+wc_wood,elev_med,Median elevation (m),match,88.7317,69.5487,42.7680,107.0131,0.2670,15,1.2758
+wc_wood,elev_med,Median elevation (m),rand,88.7317,58.2100,35.6630,94.9407,0.1000,15,1.5243
+wc_wood,edge_2,Share within 2 km of a county boundary,match,0.1333,0.1427,0.0000,0.3333,1.0000,15,0.9346
+wc_wood,edge_2,Share within 2 km of a county boundary,rand,0.1333,0.1467,0.0000,0.3333,1.0000,15,0.9091
+wc_wood,edge_med,Median distance to a county boundary (km),match,7.6417,9.4260,4.2843,15.6621,0.6240,15,0.8107
+wc_wood,edge_med,Median distance to a county boundary (km),rand,7.6417,10.1303,4.8369,15.8789,0.3960,15,0.7543
+wc_hill,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",match,0.0769,0.1523,0.0000,0.3846,0.7490,13,0.5051
+wc_hill,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",rand,0.0769,0.1046,0.0000,0.3077,1.0000,13,0.7353
+wc_hill,prehist_med,Median distance to a prehistoric monument (km),match,4.9650,2.9622,1.6881,4.9959,0.0620,13,1.6761
+wc_hill,prehist_med,Median distance to a prehistoric monument (km),rand,4.9650,3.4509,1.9619,5.1483,0.0790,13,1.4387
+wc_hill,barrow_1,Share within 1 km of a barrow or burial cairn,match,0.0769,0.0908,0.0000,0.2308,1.0000,13,0.8475
+wc_hill,barrow_1,Share within 1 km of a barrow or burial cairn,rand,0.0769,0.0662,0.0000,0.2308,1.0000,13,1.1628
+wc_hill,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",match,0.0769,0.0492,0.0000,0.1538,1.0000,13,1.5625
+wc_hill,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",rand,0.0769,0.0723,0.0000,0.2308,1.0000,13,1.0638
+wc_hill,hillfort_2,Share within 2 km of a hillfort,match,0.0000,0.1246,0.0000,0.3077,0.3230,13,0.0000
+wc_hill,hillfort_2,Share within 2 km of a hillfort,rand,0.0000,0.0938,0.0000,0.2308,0.5680,13,0.0000
+wc_hill,church_1,Share within 1 km of a church,match,0.3077,0.3062,0.0769,0.5385,1.0000,13,1.0050
+wc_hill,church_1,Share within 1 km of a church,rand,0.3077,0.2662,0.0769,0.5385,0.9610,13,1.1561
+wc_hill,church_med,Median distance to a church (km),match,1.5960,1.5008,0.9053,2.2742,0.7340,13,1.0635
+wc_hill,church_med,Median distance to a church (km),rand,1.5960,1.5801,0.9810,2.1846,0.9180,13,1.0101
+wc_hill,well_2,Share within 2 km of a holy well,match,0.0769,0.0338,0.0000,0.1538,0.7300,13,2.2727
+wc_hill,well_2,Share within 2 km of a holy well,rand,0.0769,0.0338,0.0000,0.1538,0.7250,13,2.2727
+wc_hill,water_025,Share within 250 m of a named watercourse,match,0.1538,0.1077,0.0000,0.3077,0.7950,13,1.4286
+wc_hill,water_025,Share within 250 m of a named watercourse,rand,0.1538,0.1723,0.0000,0.3846,1.0000,13,0.8929
+wc_hill,relief_med,Median relief within 1 km (m),match,68.9709,82.4475,46.5792,130.5933,0.4670,13,0.8365
+wc_hill,relief_med,Median relief within 1 km (m),rand,68.9709,66.3835,43.9367,104.2260,0.8340,13,1.0390
+wc_hill,slope_med,Median slope (degrees),match,2.8145,2.2879,1.1795,4.4267,0.6710,13,1.2302
+wc_hill,slope_med,Median slope (degrees),rand,2.8145,2.0569,1.1899,3.5591,0.3490,13,1.3683
+wc_hill,steep,Share on ground steeper than 10 degrees,match,0.0769,0.1169,0.0000,0.3077,1.0000,13,0.6579
+wc_hill,steep,Share on ground steeper than 10 degrees,rand,0.0769,0.0785,0.0000,0.2308,1.0000,13,0.9804
+wc_hill,elev_med,Median elevation (m),match,80.4510,50.4621,29.9704,101.1279,0.1870,13,1.5943
+wc_hill,elev_med,Median elevation (m),rand,80.4510,95.6170,56.3802,150.8190,0.5380,13,0.8414
+wc_hill,edge_2,Share within 2 km of a county boundary,match,0.0769,0.1354,0.0000,0.3077,0.8890,13,0.5682
+wc_hill,edge_2,Share within 2 km of a county boundary,rand,0.0769,0.1769,0.0000,0.3846,0.5880,13,0.4348
+wc_hill,edge_med,Median distance to a county boundary (km),match,11.5817,11.7394,5.3438,20.0465,0.9970,13,0.9866
+wc_hill,edge_med,Median distance to a county boundary (km),rand,11.5817,8.3036,3.8132,16.1474,0.3550,13,1.3948
+wc_body,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",match,0.5000,0.2683,0.0833,0.5000,0.1080,12,1.8634
+wc_body,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",rand,0.5000,0.1583,0.0000,0.3333,0.0120,12,3.1579
+wc_body,prehist_med,Median distance to a prehistoric monument (km),match,0.8511,2.1564,1.1049,3.8987,0.0070,12,0.3947
+wc_body,prehist_med,Median distance to a prehistoric monument (km),rand,0.8511,2.5362,1.5984,3.7830,0.0010,12,0.3356
+wc_body,barrow_1,Share within 1 km of a barrow or burial cairn,match,0.2500,0.0967,0.0000,0.2500,0.1420,12,2.5862
+wc_body,barrow_1,Share within 1 km of a barrow or burial cairn,rand,0.2500,0.0733,0.0000,0.2500,0.0950,12,3.4091
+wc_body,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",match,0.0000,0.0333,0.0000,0.1667,1.0000,12,0.0000
+wc_body,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",rand,0.0000,0.0533,0.0000,0.1667,1.0000,12,0.0000
+wc_body,hillfort_2,Share within 2 km of a hillfort,match,0.4167,0.3517,0.1667,0.5833,0.7920,12,1.1848
+wc_body,hillfort_2,Share within 2 km of a hillfort,rand,0.4167,0.2450,0.0833,0.5000,0.2450,12,1.7007
+wc_body,church_1,Share within 1 km of a church,match,0.0000,0.3333,0.0833,0.5833,0.0140,12,0.0000
+wc_body,church_1,Share within 1 km of a church,rand,0.0000,0.2900,0.0833,0.5833,0.0280,12,0.0000
+wc_body,church_med,Median distance to a church (km),match,1.4520,1.4065,0.8233,2.0419,0.8150,12,1.0324
+wc_body,church_med,Median distance to a church (km),rand,1.4520,1.3634,0.9335,1.9979,0.7800,12,1.0650
+wc_body,well_2,Share within 2 km of a holy well,match,0.0833,0.0517,0.0000,0.1667,0.9960,12,1.6129
+wc_body,well_2,Share within 2 km of a holy well,rand,0.0833,0.0150,0.0000,0.0833,0.3470,12,5.5556
+wc_body,water_025,Share within 250 m of a named watercourse,match,0.3333,0.1917,0.0813,0.3333,0.2480,12,1.7391
+wc_body,water_025,Share within 250 m of a named watercourse,rand,0.3333,0.1900,0.0000,0.4167,0.3410,12,1.7544
+wc_body,relief_med,Median relief within 1 km (m),match,67.3261,68.2339,47.8152,90.7065,0.9780,12,0.9867
+wc_body,relief_med,Median relief within 1 km (m),rand,67.3261,53.4476,36.3335,78.4194,0.2480,12,1.2597
+wc_body,slope_med,Median slope (degrees),match,2.8779,2.7483,1.4449,4.9941,0.8860,12,1.0472
+wc_body,slope_med,Median slope (degrees),rand,2.8779,1.8401,1.0212,3.1022,0.0960,12,1.5640
+wc_body,steep,Share on ground steeper than 10 degrees,match,0.1667,0.0950,0.0000,0.2500,0.5520,12,1.7544
+wc_body,steep,Share on ground steeper than 10 degrees,rand,0.1667,0.0150,0.0000,0.0833,0.0120,12,11.1111
+wc_body,elev_med,Median elevation (m),match,38.8756,45.4011,24.7388,71.2582,0.5520,12,0.8563
+wc_body,elev_med,Median elevation (m),rand,38.8756,91.9641,57.0627,137.3668,0.0010,12,0.4227
+wc_body,edge_2,Share within 2 km of a county boundary,match,0.0833,0.1167,0.0000,0.3333,1.0000,12,0.7143
+wc_body,edge_2,Share within 2 km of a county boundary,rand,0.0833,0.1200,0.0000,0.3333,1.0000,12,0.6944
+wc_body,edge_med,Median distance to a county boundary (km),match,15.9931,11.8875,6.4789,18.0242,0.1560,12,1.3454
+wc_body,edge_med,Median distance to a county boundary (km),rand,15.9931,9.7386,5.1917,15.5924,0.0380,12,1.6422
+wc_earthwork,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",match,0.6154,0.3862,0.1538,0.6154,0.1060,13,1.5936
+wc_earthwork,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",rand,0.6154,0.2046,0.0000,0.4615,0.0030,13,3.0075
+wc_earthwork,prehist_med,Median distance to a prehistoric monument (km),match,0.5905,1.4244,0.7147,2.6744,0.0190,13,0.4146
+wc_earthwork,prehist_med,Median distance to a prehistoric monument (km),rand,0.5905,2.1646,1.2526,3.5814,0.0000,13,0.2728
+wc_earthwork,barrow_1,Share within 1 km of a barrow or burial cairn,match,0.1538,0.1385,0.0000,0.3077,1.0000,13,1.1111
+wc_earthwork,barrow_1,Share within 1 km of a barrow or burial cairn,rand,0.1538,0.1092,0.0000,0.3077,0.8620,13,1.4085
+wc_earthwork,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",match,0.0000,0.0308,0.0000,0.1538,1.0000,13,0.0000
+wc_earthwork,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",rand,0.0000,0.0385,0.0000,0.1538,1.0000,13,0.0000
+wc_earthwork,hillfort_2,Share within 2 km of a hillfort,match,0.6923,0.4800,0.3077,0.6923,0.0790,13,1.4423
+wc_earthwork,hillfort_2,Share within 2 km of a hillfort,rand,0.6923,0.2954,0.0769,0.5385,0.0030,13,2.3437
+wc_earthwork,church_1,Share within 1 km of a church,match,0.2308,0.3215,0.1538,0.5385,0.6700,13,0.7177
+wc_earthwork,church_1,Share within 1 km of a church,rand,0.2308,0.2938,0.0769,0.5385,0.8820,13,0.7853
+wc_earthwork,church_med,Median distance to a church (km),match,1.8217,1.5144,0.9474,2.2400,0.3890,13,1.2029
+wc_earthwork,church_med,Median distance to a church (km),rand,1.8217,1.4997,0.9552,2.2495,0.3570,13,1.2147
+wc_earthwork,well_2,Share within 2 km of a holy well,match,0.0000,0.0292,0.0000,0.1538,1.0000,13,0.0000
+wc_earthwork,well_2,Share within 2 km of a holy well,rand,0.0000,0.0185,0.0000,0.0769,1.0000,13,0.0000
+wc_earthwork,water_025,Share within 250 m of a named watercourse,match,0.3077,0.3277,0.2308,0.4615,1.0000,13,0.9390
+wc_earthwork,water_025,Share within 250 m of a named watercourse,rand,0.3077,0.1785,0.0000,0.3846,0.3700,13,1.7241
+wc_earthwork,relief_med,Median relief within 1 km (m),match,65.4761,68.4605,44.5179,102.2897,0.8010,13,0.9564
+wc_earthwork,relief_med,Median relief within 1 km (m),rand,65.4761,56.8767,36.4041,94.8220,0.6420,13,1.1512
+wc_earthwork,slope_med,Median slope (degrees),match,3.8201,2.4674,1.2331,4.2880,0.1140,13,1.5482
+wc_earthwork,slope_med,Median slope (degrees),rand,3.8201,2.0291,1.0353,3.7328,0.0410,13,1.8826
+wc_earthwork,steep,Share on ground steeper than 10 degrees,match,0.0000,0.0446,0.0000,0.1538,1.0000,13,0.0000
+wc_earthwork,steep,Share on ground steeper than 10 degrees,rand,0.0000,0.0369,0.0000,0.1538,1.0000,13,0.0000
+wc_earthwork,elev_med,Median elevation (m),match,24.5878,25.6134,14.2659,45.0626,0.9100,13,0.9600
+wc_earthwork,elev_med,Median elevation (m),rand,24.5878,64.5416,38.2923,107.6658,0.0000,13,0.3810
+wc_earthwork,edge_2,Share within 2 km of a county boundary,match,0.1538,0.0785,0.0000,0.2308,0.4640,13,1.9608
+wc_earthwork,edge_2,Share within 2 km of a county boundary,rand,0.1538,0.1123,0.0000,0.3077,0.8940,13,1.3699
+wc_earthwork,edge_med,Median distance to a county boundary (km),match,14.5781,17.4751,11.1298,28.1821,0.5980,13,0.8342
+wc_earthwork,edge_med,Median distance to a county boundary (km),rand,14.5781,14.8695,7.4687,25.3532,0.9890,13,0.9804
+wc_water,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",match,0.3333,0.1433,0.0000,0.3333,0.3900,6,2.3256
+wc_water,prehist_1,"Share within 1 km of a recorded prehistoric monument (barrow, megalith or hillfort)",rand,0.3333,0.1400,0.0000,0.3333,0.3740,6,2.3810
+wc_water,prehist_med,Median distance to a prehistoric monument (km),match,3.3194,2.9561,1.4886,6.1461,0.9480,6,1.1229
+wc_water,prehist_med,Median distance to a prehistoric monument (km),rand,3.3194,3.3258,1.5388,6.1439,0.9240,6,0.9981
+wc_water,barrow_1,Share within 1 km of a barrow or burial cairn,match,0.1667,0.1033,0.0000,0.3333,1.0000,6,1.6129
+wc_water,barrow_1,Share within 1 km of a barrow or burial cairn,rand,0.1667,0.1000,0.0000,0.3333,1.0000,6,1.6667
+wc_water,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",match,0.1667,0.0433,0.0000,0.1667,0.4670,6,3.8462
+wc_water,stone_2,"Share within 2 km of a standing stone, stone circle or chambered tomb",rand,0.1667,0.0433,0.0000,0.1667,0.4540,6,3.8462
+wc_water,hillfort_2,Share within 2 km of a hillfort,match,0.1667,0.1433,0.0000,0.3333,1.0000,6,1.1628
+wc_water,hillfort_2,Share within 2 km of a hillfort,rand,0.1667,0.1267,0.0000,0.5000,1.0000,6,1.3158
+wc_water,church_1,Share within 1 km of a church,match,0.3333,0.2933,0.0000,0.6667,1.0000,6,1.1364
+wc_water,church_1,Share within 1 km of a church,rand,0.3333,0.3300,0.0000,0.6667,1.0000,6,1.0101
+wc_water,church_med,Median distance to a church (km),match,1.4729,1.5946,0.7856,2.6838,0.7800,6,0.9237
+wc_water,church_med,Median distance to a church (km),rand,1.4729,1.5035,0.7323,2.5117,0.9020,6,0.9797
+wc_water,well_2,Share within 2 km of a holy well,match,0.1667,0.0200,0.0000,0.1667,0.2270,6,8.3333
+wc_water,well_2,Share within 2 km of a holy well,rand,0.1667,0.0133,0.0000,0.1667,0.1360,6,12.5000
+wc_water,water_025,Share within 250 m of a named watercourse,match,0.8333,0.8500,0.6667,1.0000,1.0000,6,0.9804
+wc_water,water_025,Share within 250 m of a named watercourse,rand,0.8333,0.2033,0.0000,0.5000,0.0010,6,4.0984
+wc_water,relief_med,Median relief within 1 km (m),match,57.8207,55.7025,22.4985,97.1891,0.9390,6,1.0380
+wc_water,relief_med,Median relief within 1 km (m),rand,57.8207,59.3209,30.9625,100.0742,0.9230,6,0.9747
+wc_water,slope_med,Median slope (degrees),match,1.5001,1.0264,0.4112,2.5905,0.4210,6,1.4614
+wc_water,slope_med,Median slope (degrees),rand,1.5001,1.9069,0.8382,3.8762,0.5560,6,0.7866
+wc_water,steep,Share on ground steeper than 10 degrees,match,0.3333,0.0100,0.0000,0.1667,0.0020,6,33.3333
+wc_water,steep,Share on ground steeper than 10 degrees,rand,0.3333,0.0200,0.0000,0.1667,0.0100,6,16.6667
+wc_water,elev_med,Median elevation (m),match,76.8292,47.9778,14.1666,129.2128,0.5910,6,1.6014
+wc_water,elev_med,Median elevation (m),rand,76.8292,80.2298,28.2119,167.4152,0.9250,6,0.9576
+wc_water,edge_2,Share within 2 km of a county boundary,match,0.0000,0.1700,0.0000,0.5000,0.5560,6,0.0000
+wc_water,edge_2,Share within 2 km of a county boundary,rand,0.0000,0.1433,0.0000,0.3333,0.6650,6,0.0000
+wc_water,edge_med,Median distance to a county boundary (km),match,15.3307,12.6733,3.4823,21.4288,0.5780,6,1.2097
+wc_water,edge_med,Median distance to a county boundary (km),rand,15.3307,11.9063,4.5481,19.3425,0.3880,6,1.2876
