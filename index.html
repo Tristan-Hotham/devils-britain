@@ -417,6 +417,6 @@ const ff = (v, t) => v == null ? "n/a" : t === "f" ? v.toFixed(1) : t === "m" ? 
 document.getElementById("tab").innerHTML = `<thead><tr><th>Measure</th><th class="num">n</th><th class="num">Observed</th><th class="num">Matched</th><th class="num">Random land</th></tr></thead><tbody>` +
   TAB.map(([g, k, l, t]) => { const x = G[g][k]; return `<tr><td>${l}</td><td class="num">${G[g].n}</td><td class="num">${ff(x.match.obs, t)}</td><td class="num">${ff(x.match.base, t)} (${pfmt(x.match.p)})</td><td class="num">${ff(x.rand.base, t)} (${pfmt(x.rand.p)})</td></tr>`; }).join("") + "</tbody>";
 </script>
-<script src="https://tristan-hotham.github.io/assets/site-nav.js" defer></script>
+<script src="/assets/site-nav.js" defer></script>
 </body>
 </html>
